@@ -27,14 +27,6 @@ public class PlayerController : MonoBehaviour
         Vector3 move = transform.right * horizontal + transform.forward * vertical;
         characterController.Move(move * Time.deltaTime);
 
-        if (isGrounded)
-        {
-            debug.text = "Grounded";
-        }
-        else {
-            debug.text = "Not Grounded";
-        }
-
         if (Input.GetButtonDown("Jump") && isGrounded) {
             Debug.Log("Jump");
             velocity.y = jumpHeight;
