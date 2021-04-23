@@ -99,3 +99,28 @@ Received Import Request.
 Start importing Assets/Materials/Fire.mat using Guid(041d78d9d4ad2f14d8238864143fea64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ddfd126bc8f07f1359259493f2e2517') in 1.728218 seconds
   Import took 1.729909 seconds .
 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001417 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.31 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.921 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.23 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1112 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 142.9 MB.
+System memory in use after: 142.9 MB.
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1621.
+Total: 1.999800 ms (FindLiveObjects: 0.249000 ms CreateObjectMapping: 0.036200 ms MarkObjects: 1.651800 ms  DeleteObjects: 0.060600 ms)
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
