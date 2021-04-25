@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 22679733}
   m_Layer: 7
   m_Name: Cinos
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -154,11 +154,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 703d76f1810aa0d43a4f066b3f5b479b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debug: {fileID: 269869242}
   cam: {fileID: 963194227}
   spell: {fileID: 7969812890285380318, guid: a3cbba17120b2fc4a87ad39c67210f39, type: 3}
   firepoint: {fileID: 1642491553}
-  projectileSpeed: 100
+  projectileSpeed: 50
 --- !u!4 &22679734
 Transform:
   m_ObjectHideFlags: 0
@@ -323,7 +322,7 @@ GameObject:
   - component: {fileID: 264905237}
   m_Layer: 7
   m_Name: GroundCheck
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6268,8 +6267,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 155911c849d9b8f438c7b65ce9d90530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontalSpeed: 100
-  verticalSpeed: 100
+  horizontalSpeed: 1000
+  verticalSpeed: 1000
   playerBody: {fileID: 22679734}
 --- !u!1 &1057499887
 GameObject:
@@ -6380,7 +6379,7 @@ GameObject:
   - component: {fileID: 1145675206}
   m_Layer: 7
   m_Name: Body
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11700,7 +11699,7 @@ GameObject:
   - component: {fileID: 1594923601}
   m_Layer: 7
   m_Name: '"Arm"'
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11793,7 +11792,7 @@ GameObject:
   - component: {fileID: 1642491553}
   m_Layer: 7
   m_Name: Firepoint
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

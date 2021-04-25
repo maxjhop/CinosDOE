@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class FireScript : MonoBehaviour
 {
-    public Text debug;
+    
     public Camera cam;
     public GameObject spell;
     public Transform firepoint;
@@ -22,7 +22,6 @@ public class FireScript : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            debug.text = ("BOOM!");
             Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
             RaycastHit hit;
 
@@ -34,8 +33,6 @@ public class FireScript : MonoBehaviour
             var projectileObj = Instantiate(spell, firepoint.position, Quaternion.identity) as GameObject;
             projectileObj.GetComponent<Rigidbody>().velocity = (destination - firepoint.position).normalized * projectileSpeed;
         }
-        else {
-            debug.text = ("Chillin");
-        }
+        
     }
 }
