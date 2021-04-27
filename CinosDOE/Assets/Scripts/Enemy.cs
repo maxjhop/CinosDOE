@@ -6,6 +6,18 @@ public class Enemy : MonoBehaviour
 {
     public GameObject player;
     public int speed = 5;
+    public GameObject levelOneBoss;
+    public float timer;
+
+    void Awake()
+    {
+        levelOneBoss = GameObject.Find("LevelOneBoss");
+        if (levelOneBoss != null)
+        {
+            print("called in awake");
+            levelOneBoss.SetActive(false);
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +27,17 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // nt(timer);
+        // makes mini-boss appear after 10 seconds
+        /*
+        if (timer > 5.0f && levelOneBoss.activeSelf == false)
+        {
+            print("ACTIVATING BOSS");
+            levelOneBoss.SetActive(true);
+        }
+        timer += Time.deltaTime;
+        */
+
         transform.LookAt(player.transform);
         transform.Translate(0, 0, speed * Time.deltaTime);
    

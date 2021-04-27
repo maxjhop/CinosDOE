@@ -732,6 +732,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 22679732}
   speed: 5
+  levelOneBoss: {fileID: 0}
+  timer: 0
 --- !u!54 &399613162
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1719,6 +1721,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 22679732}
   speed: 5
+  levelOneBoss: {fileID: 0}
+  timer: 0
 --- !u!54 &887408033
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6731,8 +6735,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 155911c849d9b8f438c7b65ce9d90530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontalSpeed: 100
-  verticalSpeed: 100
+  horizontalSpeed: 1000
+  verticalSpeed: 1000
   playerBody: {fileID: 22679734}
 --- !u!1 &1027255252
 GameObject:
@@ -12346,6 +12350,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 22679732}
   speed: 5
+  levelOneBoss: {fileID: 0}
+  timer: 0
 --- !u!54 &1501320821
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12573,6 +12579,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 22679732}
   speed: 2
+  levelOneBoss: {fileID: 0}
+  timer: 0
 --- !u!1 &1594923599
 GameObject:
   m_ObjectHideFlags: 0
