@@ -158,6 +158,7 @@ MonoBehaviour:
   spell: {fileID: 7969812890285380318, guid: a3cbba17120b2fc4a87ad39c67210f39, type: 3}
   firepoint: {fileID: 1642491553}
   projectileSpeed: 50
+  wand: {fileID: 156224837}
 --- !u!4 &22679734
 Transform:
   m_ObjectHideFlags: 0
@@ -229,6 +230,7 @@ GameObject:
   - component: {fileID: 156224840}
   - component: {fileID: 156224839}
   - component: {fileID: 156224842}
+  - component: {fileID: 156224843}
   m_Layer: 7
   m_Name: Wand
   m_TagString: Untagged
@@ -243,15 +245,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 156224837}
-  m_LocalRotation: {x: 0.67559016, y: 0, z: 0, w: 0.7372774}
-  m_LocalPosition: {x: 0.498, y: 0.6226, z: 0.42}
+  m_LocalRotation: {x: 0.2656565, y: -0.00066213927, z: -0.0017798685, w: 0.9640659}
+  m_LocalPosition: {x: 0.5, y: 0.5706, z: 0.5}
   m_LocalScale: {x: 0.1, y: 0.3, z: 0.1}
   m_Children:
   - {fileID: 1642491553}
   - {fileID: 1603436796}
   m_Father: {fileID: 22679734}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 85, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 30.812, y: -0.148, z: -0.252}
 --- !u!136 &156224839
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -325,7 +327,7 @@ Animator:
   m_GameObject: {fileID: 156224837}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f79bf4695eefaaf469aaa567346b9714, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -334,6 +336,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &156224843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 156224837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8852ea84876a63d41b517c74dbf434da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &259905702
 GameObject:
   m_ObjectHideFlags: 0
@@ -346,7 +360,7 @@ GameObject:
   - component: {fileID: 259905706}
   - component: {fileID: 259905705}
   - component: {fileID: 259905704}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -529,7 +543,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Chillin
+  m_Text: 
 --- !u!222 &269869243
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -550,7 +564,7 @@ GameObject:
   - component: {fileID: 334086153}
   - component: {fileID: 334086152}
   - component: {fileID: 334086151}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cylinder (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1403,7 +1417,7 @@ GameObject:
   - component: {fileID: 758839015}
   - component: {fileID: 758839014}
   - component: {fileID: 758839013}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12234,7 +12248,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1310580193}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Shop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12366,7 +12380,7 @@ GameObject:
   - component: {fileID: 1421732876}
   - component: {fileID: 1421732875}
   - component: {fileID: 1421732874}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
