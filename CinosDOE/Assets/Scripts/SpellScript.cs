@@ -7,7 +7,11 @@ public class SpellScript : MonoBehaviour
 {
     public LayerMask playerMask;
     public GameObject explode;
-    public Transform spell; 
+    public Transform spell;
+
+    public float SpellDamage = 50;
+    bool collide = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,9 +28,25 @@ public class SpellScript : MonoBehaviour
     {
         if (collision.gameObject.tag != "Player")
         {
-            var projectileObj = Instantiate(explode, spell.position, Quaternion.identity) as GameObject;
-            Debug.Log("BOOM!");
-            Destroy(gameObject);
+            if(collide == false)
+            {
+                create_explosion();
+                if (collision.gameObject.tag == "Enemy")
+                {
+                    Debug.Log("Is enemy");
+                    Enemy enemyhealth = collision.gameObject.transform.GetComponent<Enemy>();
+                    enemyhealth.TakeDamage(SpellDamage);
+                }
+            }
+           
         }
+    }
+    void create_explosion()
+    {
+        collide = true;
+        var projectileObj = Instantiate(explode, spell.position, Quaternion.identity) as GameObject;
+        Debug.Log("BOOM!");
+        Destroy(gameObject);
+
     }
 }

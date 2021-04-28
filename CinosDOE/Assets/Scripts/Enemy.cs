@@ -9,6 +9,10 @@ public class Enemy : MonoBehaviour
     public GameObject levelOneBoss;
     public float timer;
 
+    public float EnemyHealth = 100f;
+
+    public float Damage = 50;
+
     void Awake()
     {
         levelOneBoss = GameObject.Find("LevelOneBoss");
@@ -41,5 +45,18 @@ public class Enemy : MonoBehaviour
         transform.LookAt(player.transform);
         transform.Translate(0, 0, speed * Time.deltaTime);
    
+    }
+    public void TakeDamage(float damage)
+    {
+        EnemyHealth -= damage;
+        Debug.Log("took damage");
+        if (EnemyHealth <= 0)
+        {
+            EnemyDead();
+        }
+    }
+    void EnemyDead()
+    {
+        Destroy(gameObject);
     }
 }
