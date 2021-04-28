@@ -37,6 +37,12 @@ public class SpellScript : MonoBehaviour
                     Enemy enemyhealth = collision.gameObject.transform.GetComponent<Enemy>();
                     enemyhealth.TakeDamage(SpellDamage);
                 }
+                if (collision.gameObject.name == "LevelOneBoss")
+                {
+                    Debug.Log("Is Boss");
+                    Enemy boss = collision.gameObject.transform.GetComponent<Enemy>();
+                    boss.TakeDamage(SpellDamage);
+                }
             }
            
         }
