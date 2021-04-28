@@ -6867,8 +6867,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 155911c849d9b8f438c7b65ce9d90530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontalSpeed: 500
-  verticalSpeed: 500
+  horizontalSpeed: 80
+  verticalSpeed: 80
   playerBody: {fileID: 22679734}
 --- !u!1 &1027255252
 GameObject:

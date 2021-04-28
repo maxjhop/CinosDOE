@@ -259,3 +259,85 @@ System memory in use after: 140.1 MB.
 Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1603.
 Total: 1.769100 ms (FindLiveObjects: 0.208300 ms CreateObjectMapping: 0.056900 ms MarkObjects: 1.385600 ms  DeleteObjects: 0.117000 ms)
 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000855 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.39 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.803 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.22 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1114 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 140.0 MB.
+System memory in use after: 140.1 MB.
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1606.
+Total: 2.372900 ms (FindLiveObjects: 0.147300 ms CreateObjectMapping: 0.038000 ms MarkObjects: 2.109600 ms  DeleteObjects: 0.076300 ms)
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 1.20 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 118.0 MB.
+System memory in use after: 118.1 MB.
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 1606.
+Total: 2.071600 ms (FindLiveObjects: 0.145300 ms CreateObjectMapping: 0.037400 ms MarkObjects: 1.779600 ms  DeleteObjects: 0.106900 ms)
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.80 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 118.0 MB.
+System memory in use after: 118.1 MB.
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 1606.
+Total: 1.961100 ms (FindLiveObjects: 0.210300 ms CreateObjectMapping: 0.065900 ms MarkObjects: 1.603800 ms  DeleteObjects: 0.078600 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003436 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.59 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.415 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.16 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1114 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 140.0 MB.
+System memory in use after: 140.1 MB.
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1609.
+Total: 8.907900 ms (FindLiveObjects: 0.631900 ms CreateObjectMapping: 0.222700 ms MarkObjects: 7.592000 ms  DeleteObjects: 0.454100 ms)
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 2.39 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 118.0 MB.
+System memory in use after: 118.1 MB.
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 1609.
+Total: 3.398600 ms (FindLiveObjects: 0.349600 ms CreateObjectMapping: 0.083100 ms MarkObjects: 2.824500 ms  DeleteObjects: 0.139100 ms)
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
