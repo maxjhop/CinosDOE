@@ -470,7 +470,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 77423a9b6daccac45b3015d199fd1bf1, type: 2}
+  - {fileID: 2100000, guid: 643d7ac9d6191854188da35865a9cedf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -717,7 +717,7 @@ GameObject:
   - component: {fileID: 350808490}
   - component: {fileID: 350808489}
   - component: {fileID: 350808488}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Obelisk (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1095,7 +1095,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 643d7ac9d6191854188da35865a9cedf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1594,7 +1594,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 643d7ac9d6191854188da35865a9cedf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2223,7 +2223,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 643d7ac9d6191854188da35865a9cedf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2657,7 +2657,7 @@ GameObject:
   - component: {fileID: 1291669906}
   - component: {fileID: 1291669905}
   - component: {fileID: 1291669904}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Obelisk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2826,7 +2826,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 643d7ac9d6191854188da35865a9cedf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2935,7 +2935,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 77423a9b6daccac45b3015d199fd1bf1, type: 2}
+  - {fileID: 2100000, guid: 643d7ac9d6191854188da35865a9cedf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3467,7 +3467,7 @@ GameObject:
   - component: {fileID: 1812231165}
   - component: {fileID: 1812231164}
   - component: {fileID: 1812231163}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Obelisk (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
