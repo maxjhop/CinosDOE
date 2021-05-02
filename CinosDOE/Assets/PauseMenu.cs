@@ -27,6 +27,7 @@ public class PauseMenu : MonoBehaviour
     public void ExitToMenu() {
         SceneManager.LoadScene(0);
         Time.timeScale = 1f;
+        GamePaused = false;
     }
 
     // Update is called once per frame
