@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,7 +12,7 @@ public class PlayerController : MonoBehaviour
     public float jumpHeight = 10f;
     //distance from the middle of the collider to the ground
     public float distToGround = 1f;
-    public Text debug;
+    public Text Cooldowns;
     public Transform groundCheck;
     public LayerMask groundMask;
     Vector3 velocity;
@@ -32,6 +33,7 @@ public class PlayerController : MonoBehaviour
             velocity.y = MovementSpeed * 10;
             characterController.Move(velocity * Time.deltaTime);
             fly = true;
+            //Cooldowns.text = flyCooldownStart.ToString();
 
 
         }
@@ -54,7 +56,13 @@ public class PlayerController : MonoBehaviour
         }
         else if (flyCooldownStart > 0)
         {
+            Cooldowns.text = "Fly burst cooldown: " + Math.Round(flyCooldownStart, 2).ToString();
             flyCooldownStart -= Time.deltaTime;
+
+        }
+        else if (flyCooldownStart <= 0 && fly == false) 
+        {
+            Cooldowns.text = "";
         }
 
     }
