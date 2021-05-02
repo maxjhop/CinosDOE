@@ -12,6 +12,7 @@ public class MenuScript : MonoBehaviour
 
     public void QuitGame() {
         Debug.Log("QUIT");
+        UnityEditor.EditorApplication.isPlaying = false;
         Application.Quit();
     }
 }
