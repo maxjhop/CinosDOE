@@ -191,7 +191,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterController: {fileID: 22679736}
   MovementSpeed: 10
-  Gravity: 9.8
+  Gravity: 18
   jumpHeight: 10
   distToGround: 1
   debug: {fileID: 269869242}
@@ -2571,8 +2571,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 155911c849d9b8f438c7b65ce9d90530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontalSpeed: 70
-  verticalSpeed: 70
+  horizontalSpeed: 300
+  verticalSpeed: 300
   playerBody: {fileID: 22679734}
 --- !u!4 &973167437 stripped
 Transform:

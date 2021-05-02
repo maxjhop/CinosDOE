@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     public CharacterController characterController;
-    public float MovementSpeed = 1;
-    public float Gravity = 9.8f;
+    public float MovementSpeed = 10f;
+    public float Gravity = 18f;
     public float jumpHeight = 10f;
     //distance from the middle of the collider to the ground
     public float distToGround = 1f;
@@ -16,6 +16,20 @@ public class PlayerController : MonoBehaviour
     public LayerMask groundMask;
     Vector3 velocity;
     bool isGrounded;
+    public float FlyHeight = 20f;
+    private bool fly = false;
+    private float flyStart;
+
+    void FlyAbility() 
+    {
+        if (Input.GetButtonDown("Fly"))
+        {
+            flyStart = groundCheck.position.y;
+            velocity.y = MovementSpeed * 10;
+            characterController.Move(velocity * Time.deltaTime); 
+        
+        }
+        fly = true;    }
 
     
     void Update()
@@ -36,12 +50,24 @@ public class PlayerController : MonoBehaviour
         // Gravity
         if (isGrounded && velocity.y < 0)
         {
-           // velocity.y = -2f;
+           velocity.y = 0f;
             
         }
         
         velocity.y -= Gravity * Time.deltaTime;
         characterController.Move(velocity * Time.deltaTime);
+
+        FlyAbility();
+        if (fly) {
+            if ((groundCheck.position.y - flyStart) > FlyHeight)
+            {
+                velocity.y = 0f;
+                characterController.Move(velocity * Time.deltaTime);
+                fly = false;
+
+            }
+
+        }
        
     }
 }
