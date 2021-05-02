@@ -20,13 +20,15 @@ public class PlayerController : MonoBehaviour
     private bool fly = false;
     private float flyStart;
     private float descendCooldown = 2f;
+    private float flyCooldownStart = 0f;
     private float flyCooldown = 5f;
 
     void FlyAbility() 
     {
-        if (Input.GetButtonDown("Fly"))
+        if (Input.GetButtonDown("Fly") && flyCooldownStart <= 0)
         {
             flyStart = groundCheck.position.y;
+            flyCooldownStart = flyCooldown;
             velocity.y = MovementSpeed * 10;
             characterController.Move(velocity * Time.deltaTime);
             fly = true;
@@ -49,6 +51,10 @@ public class PlayerController : MonoBehaviour
 
             }
 
+        }
+        else if (flyCooldownStart > 0)
+        {
+            flyCooldownStart -= Time.deltaTime;
         }
 
     }
