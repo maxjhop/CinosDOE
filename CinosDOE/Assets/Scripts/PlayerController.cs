@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
     public float FlyHeight = 20f;
     private bool fly = false;
     private float flyStart;
+    private float descendCooldown = 2f;
+    private float flyCooldown = 5f;
 
     void FlyAbility() 
     {
@@ -26,10 +28,30 @@ public class PlayerController : MonoBehaviour
         {
             flyStart = groundCheck.position.y;
             velocity.y = MovementSpeed * 10;
-            characterController.Move(velocity * Time.deltaTime); 
-        
+            characterController.Move(velocity * Time.deltaTime);
+            fly = true;
+
+
         }
-        fly = true;    }
+        if (fly)
+        {
+            Debug.Log(fly);
+            if ((groundCheck.position.y - flyStart) > FlyHeight)
+            {
+                velocity.y = 0f;
+                characterController.Move(velocity * Time.deltaTime);
+                descendCooldown -= Time.deltaTime;
+                if (descendCooldown <= 0)
+                {
+                    fly = false;
+                    descendCooldown = 2f;
+                }
+
+            }
+
+        }
+
+    }
 
     
     void Update()
@@ -58,16 +80,7 @@ public class PlayerController : MonoBehaviour
         characterController.Move(velocity * Time.deltaTime);
 
         FlyAbility();
-        if (fly) {
-            if ((groundCheck.position.y - flyStart) > FlyHeight)
-            {
-                velocity.y = 0f;
-                characterController.Move(velocity * Time.deltaTime);
-                fly = false;
-
-            }
-
-        }
+        
        
     }
 }
