@@ -13,7 +13,7 @@ public class EnemySpawn : MonoBehaviour
     private float intervalTime = 0.0f;
     private float addedTime = 1f;
     private int totalEnemies;
-    public int MAX_ENEMIES = 5;
+    public int MAX_ENEMIES = 50;
 
     // enemy info
     public GameObject enemy; // the prefab
@@ -22,7 +22,7 @@ public class EnemySpawn : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        enemyInstance = Instantiate(enemy, new Vector3(1, 2, 1), Quaternion.identity) as GameObject;
+        //enemyInstance = Instantiate(enemy, new Vector3(1, 2, 1), Quaternion.identity) as GameObject;
         //enemyInstance.transform.Rotate(0f, 180f, 0f);
         // create list of spawn point locations to randomly spawn enemies at 
         spawnPoints = GameObject.FindGameObjectsWithTag("Spawner");
@@ -43,23 +43,26 @@ public class EnemySpawn : MonoBehaviour
     void Update()
     {
         // numEnemies = GameObject.FindGameObjectsWithTag("Enemy").Length;
+        
         if (Time.time > intervalTime && totalEnemies < MAX_ENEMIES)
         {
-            //SpawnEnemy();
+            Debug.Log(Time.time);
+            Debug.Log(intervalTime);
+            SpawnEnemy();
             intervalTime += addedTime;
-            totalEnemies += 1;
+            // totalEnemies += 1;
             Debug.Log("Spawning Enemy!");
         }
-
     }
 
     // spawns enemy at random spawner
     void SpawnEnemy()
     {
-        // spawnPointPositions[Random.Range(1, numberSpawnPoints + 1)] += new Vector3(0, 3, 0)
+        Vector3 newSpawnLocation = spawnPointPositions[Random.Range(0, numberSpawnPoints)]; // += new Vector3(0, 3, 0);
         //Enemy enemyClone = Instantiate(enemy, new Vector3(1, 2, 1), Quaternion.identity);
         //GameObject newEnemy = enemyClone.gameObject;
-        GameObject newEnemy = Instantiate(enemy.gameObject, new Vector3(1, 2, 1), Quaternion.identity) as GameObject;
-        Debug.Log(newEnemy);
+        GameObject newEnemy = Instantiate(enemy.gameObject, newSpawnLocation, Quaternion.identity) as GameObject;
+        Debug.Log("NEW ENEMY SPAWNED");
+        totalEnemies += 1;
     }
 }

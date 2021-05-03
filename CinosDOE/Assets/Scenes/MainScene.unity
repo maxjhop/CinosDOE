@@ -2453,6 +2453,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a56229b7a7b3164797b3414ca8426d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MAX_ENEMIES: 15
   enemy: {fileID: 5719711211585102838, guid: 9f45cf00b0ea7824bad5b688a7d6c808, type: 3}
 --- !u!1 &1057499887
 GameObject:

@@ -21,19 +21,31 @@ public class Enemy : MonoBehaviour
 
     public Rigidbody rb;
 
-
+    
     void Awake()
     {
         // immediately disable boss
-        levelOneBoss = GameObject.Find("LevelOneBoss");
+       
+        if (this.name == "LevelOneBoss")
+        {
+
+            levelOneBoss = GameObject.Find("LevelOneBoss");
+            Debug.Log("Inside awake:", levelOneBoss);
+
+
+        }
+       
         if (this.name == "LevelOneBoss" && levelOneBoss != null)
         {
             // print("Setting boss activity to false");
             EnemyHealth = 200f;
             Damage = 75f;
             levelOneBoss.SetActive(false);
+            Debug.Log("Boss is not null");
         }
+       
     }
+
 
     // Start is called before the first frame update
     void Start()
@@ -56,7 +68,7 @@ public class Enemy : MonoBehaviour
         direction.y = 0;
 
         this.transform.rotation = Quaternion.Slerp(this.transform.rotation,
-                                    Quaternion.LookRotation(direction), 0.3f); // deleting this makes enemies face correct dir, but go backwards
+                                    Quaternion.LookRotation(direction), 0.3f);
         //moveDirection = direction.normalized;
 
         //transform.LookAt(player.transform);
@@ -66,7 +78,12 @@ public class Enemy : MonoBehaviour
         {
             transform.Translate(0, 0, speed * Time.deltaTime);
         }
-        
+        if (levelOneBoss == null)
+        {
+            Debug.Log("BOSS WENT NULL");
+            Debug.Log(this.name);
+        }
+
     }
 
     public void TakeDamage(float damage)
@@ -84,9 +101,17 @@ public class Enemy : MonoBehaviour
         // if last enemy is about to die, spawn boss
         if (numEnemies == 1)
         {
-            levelOneBoss.SetActive(true);
+            Debug.Log("Last enemy has been killed");
+            Debug.Log(levelOneBoss);
+            
+            if (levelOneBoss != null) {
+                Debug.Log("Setting Boss to active");
+                levelOneBoss.SetActive(true);
+            }
+            
+            //levelOneBoss.SetActive(true);
         }
-        
+        Debug.Log("DESTROYING ENEMY!");
         Destroy(gameObject);
 
     }
