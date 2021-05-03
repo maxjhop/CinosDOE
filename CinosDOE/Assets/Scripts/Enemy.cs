@@ -5,16 +5,12 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public GameObject player;
-   
-   
-    public int speed = 5;
-
     private GameObject levelOneBoss;
-    private int numEnemies; 
+    private int numEnemies;
 
+    public int speed = 5;
     public float EnemyHealth = 100f;
-    public float Damage = 50;
-
+    public float Damage = 50f;
     public float rotationSpeed = 2f;
 
     //colton stuff
@@ -32,9 +28,9 @@ public class Enemy : MonoBehaviour
         levelOneBoss = GameObject.Find("LevelOneBoss");
         if (this.name == "LevelOneBoss" && levelOneBoss != null)
         {
-            print("Setting boss activity to false");
+            // print("Setting boss activity to false");
             EnemyHealth = 200f;
-            Damage = 75;
+            Damage = 75f;
             levelOneBoss.SetActive(false);
         }
     }
@@ -45,9 +41,6 @@ public class Enemy : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         playertrans = player.transform;
         rb = GetComponent<Rigidbody>();
-       
-
-
     }
 
     // Update is called once per frame
@@ -63,7 +56,7 @@ public class Enemy : MonoBehaviour
         direction.y = 0;
 
         this.transform.rotation = Quaternion.Slerp(this.transform.rotation,
-                                    Quaternion.LookRotation(direction), 0.3f);
+                                    Quaternion.LookRotation(direction), 0.3f); // deleting this makes enemies face correct dir, but go backwards
         //moveDirection = direction.normalized;
 
         //transform.LookAt(player.transform);
