@@ -54,6 +54,7 @@ public class SpellScript : MonoBehaviour
         var projectileObj = Instantiate(explode, spell.position, Quaternion.identity) as GameObject;
         Debug.Log("BOOM!");
         Destroy(gameObject);
+        Destroy(projectileObj, 5);
 
     }
 }

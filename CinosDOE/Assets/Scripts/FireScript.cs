@@ -13,6 +13,8 @@ public class FireScript : MonoBehaviour
     private Vector3 destination;
     public GameObject wand;
     Animator otherAnimator;
+    public float fireRate = 0.1f;
+    private float nextFire = 0.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,21 +24,36 @@ public class FireScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
+
+        //animation logic
+        bool hasHorizontalInput = !Mathf.Approximately(horizontal, 0f);
+        bool hasVerticalInput = !Mathf.Approximately(vertical, 0f);
+        bool isWalking = hasHorizontalInput || hasVerticalInput;
+        otherAnimator.SetBool("IsWalking", isWalking);
+        bool canFire = Time.time > nextFire;
+        if (canFire)
+            Debug.Log("can fire");
+
+        if (Input.GetButtonDown("Fire1") && Time.time > nextFire)
         {
-            if (otherAnimator.GetBool("Fire") == false)
-            {
-                Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
-                RaycastHit hit;
 
-                if (Physics.Raycast(ray, out hit))
-                    destination = hit.point;
-                else
-                    destination = ray.GetPoint(1000);
+            nextFire = Time.time + fireRate;
 
-                var projectileObj = Instantiate(spell, firepoint.position, Quaternion.identity) as GameObject;
-                projectileObj.GetComponent<Rigidbody>().velocity = (destination - firepoint.position).normalized * projectileSpeed;
-            }
+
+            Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit))
+                destination = hit.point;
+            else
+                destination = ray.GetPoint(1000);
+
+            var projectileObj = Instantiate(spell, firepoint.position, Quaternion.identity) as GameObject;
+            otherAnimator.SetTrigger("Fire");
+            projectileObj.GetComponent<Rigidbody>().velocity = (destination - firepoint.position).normalized * projectileSpeed;
+            
         }
         
     }
