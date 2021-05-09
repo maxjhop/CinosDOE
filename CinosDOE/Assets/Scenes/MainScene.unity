@@ -159,7 +159,7 @@ MonoBehaviour:
   firepoint: {fileID: 1642491553}
   projectileSpeed: 50
   wand: {fileID: 156224837}
-  fireRate: 1
+  fireRate: 0.75
 --- !u!4 &22679734
 Transform:
   m_ObjectHideFlags: 0
@@ -2455,6 +2455,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MAX_ENEMIES: 15
+  MAX_WAVES: 3
   enemy: {fileID: 5719711211585102838, guid: 9f45cf00b0ea7824bad5b688a7d6c808, type: 3}
 --- !u!1 &1057499887
 GameObject:
