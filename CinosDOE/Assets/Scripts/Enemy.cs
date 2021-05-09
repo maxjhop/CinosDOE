@@ -30,7 +30,7 @@ public class Enemy : MonoBehaviour
         {
 
             levelOneBoss = GameObject.Find("LevelOneBoss");
-            Debug.Log("Inside awake:", levelOneBoss);
+            //Debug.Log("Inside awake:", levelOneBoss);
 
 
         }
@@ -41,7 +41,7 @@ public class Enemy : MonoBehaviour
             EnemyHealth = 200f;
             Damage = 75f;
             levelOneBoss.SetActive(false);
-            Debug.Log("Boss is not null");
+            //Debug.Log("Boss is not null");
         }
        
     }
@@ -80,8 +80,8 @@ public class Enemy : MonoBehaviour
         }
         if (levelOneBoss == null)
         {
-            Debug.Log("BOSS WENT NULL");
-            Debug.Log(this.name);
+            //Debug.Log("BOSS WENT NULL");
+            //Debug.Log(this.name);
         }
 
     }
@@ -102,10 +102,10 @@ public class Enemy : MonoBehaviour
         if (numEnemies == 1)
         {
             Debug.Log("Last enemy has been killed");
-            Debug.Log(levelOneBoss);
+            //Debug.Log(levelOneBoss);
             
             if (levelOneBoss != null) {
-                Debug.Log("Setting Boss to active");
+                //Debug.Log("Setting Boss to active");
                 levelOneBoss.SetActive(true);
             }
             
