@@ -32,9 +32,8 @@ public class FireScript : MonoBehaviour
         bool hasVerticalInput = !Mathf.Approximately(vertical, 0f);
         bool isWalking = hasHorizontalInput || hasVerticalInput;
         otherAnimator.SetBool("IsWalking", isWalking);
-        bool canFire = Time.time > nextFire;
-        if (canFire)
-            Debug.Log("can fire");
+        
+        
 
         if (Input.GetButtonDown("Fire1") && Time.time > nextFire)
         {
