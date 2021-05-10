@@ -7,6 +7,7 @@ public class FireScript : MonoBehaviour
 {
     
     public Camera cam;
+    private AudioSource whoosh;
     public GameObject spell;
     public Transform firepoint;
     public float projectileSpeed = 30;
@@ -19,6 +20,7 @@ public class FireScript : MonoBehaviour
     void Start()
     {
         otherAnimator = wand.GetComponent<Animator>();
+        whoosh = wand.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -39,6 +41,7 @@ public class FireScript : MonoBehaviour
         {
 
             nextFire = Time.time + fireRate;
+            whoosh.Play();
 
 
             Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));

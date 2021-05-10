@@ -45,8 +45,10 @@ public class PlayerController : MonoBehaviour
                 velocity.y = 0f;
                 characterController.Move(velocity * Time.deltaTime);
                 descendCooldown -= Time.deltaTime;
+                Gravity = 0f;
                 if (descendCooldown <= 0)
                 {
+                    Gravity = 18f;
                     fly = false;
                     descendCooldown = 2f;
                 }
