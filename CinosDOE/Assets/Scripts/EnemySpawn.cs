@@ -13,7 +13,8 @@ public class EnemySpawn : MonoBehaviour
     private float intervalTime = 0.0f;
     private float addedTime = 1f;
     private int totalEnemies;
-    public int MAX_ENEMIES = 50;
+    private int waveNum = 0;
+    public int MAX_ENEMIES = 5;
     public int MAX_WAVES = 3;  // could go up to five
     // might want to change number of enemies per wave
     // could have predetermined constants for each wave size
@@ -21,6 +22,7 @@ public class EnemySpawn : MonoBehaviour
     // enemy info
     public GameObject enemy; // the prefab
     private GameObject enemyInstance; // prefab instance
+    private int curEnemies;
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +34,7 @@ public class EnemySpawn : MonoBehaviour
         numberSpawnPoints = spawnPoints.Length;
         //Debug.Log("NUM SPAWN POINTS");
         //Debug.Log(numberSpawnPoints);
-        spawnPointPositions = new List<Vector3>(); 
+        spawnPointPositions = new List<Vector3>();
         for (int i = 0; i < numberSpawnPoints; i++)
         {
             // spawnPoints[i].transform.position += new Vector3(0, 3, 0);
@@ -43,8 +45,6 @@ public class EnemySpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // numEnemies = GameObject.FindGameObjectsWithTag("Enemy").Length;
-        
         // <begin pseudocode>
         // for each wave:
         // ... display "Wave n" 
@@ -56,15 +56,25 @@ public class EnemySpawn : MonoBehaviour
         // ... open shop for upgrades
         // spawn boss
         // <end pseudocode>
+        curEnemies = GameObject.FindGameObjectsWithTag("Enemy").Length;
 
-        if (Time.time > intervalTime && totalEnemies < MAX_ENEMIES)
+        if (Time.time > intervalTime && totalEnemies < MAX_ENEMIES && waveNum < MAX_WAVES)
         {
+            Debug.Log(waveNum);
             //Debug.Log(Time.time);
             //Debug.Log(intervalTime);
             SpawnEnemy();
             intervalTime += addedTime;
             // totalEnemies += 1;
             //Debug.Log("Spawning Enemy!");
+        }
+        if (totalEnemies >= MAX_ENEMIES)
+        {
+            if (curEnemies == 0)
+            {
+                totalEnemies = 0;
+                waveNum += 1;
+            }
         }
     }
 
