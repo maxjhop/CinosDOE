@@ -41,7 +41,7 @@ public class FireScript : MonoBehaviour
         {
 
             nextFire = Time.time + fireRate;
-           // whoosh.Play();
+            whoosh.Play();
 
 
             Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
