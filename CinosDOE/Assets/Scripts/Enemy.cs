@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class Enemy : MonoBehaviour
     private GameObject levelOneBoss;
     private int numEnemies;
 
+    private int experienceDrop = 5;
     public int speed = 5;
     public float EnemyHealth = 100f;
     public float Damage = 50f;
@@ -24,8 +26,10 @@ public class Enemy : MonoBehaviour
     
     void Awake()
     {
+        
+     
         // immediately disable boss
-       
+
         if (this.name == "LevelOneBoss")
         {
 
@@ -50,6 +54,9 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        Debug.Log(ExpManager.Instance.experience);
+    
         player = GameObject.FindWithTag("Player");
         playertrans = player.transform;
         rb = GetComponent<Rigidbody>();
@@ -112,9 +119,15 @@ public class Enemy : MonoBehaviour
             //levelOneBoss.SetActive(true);
         }
         Debug.Log("DESTROYING ENEMY!");
+        
         Destroy(gameObject);
+        ExpManager.Instance.AddExperience(experienceDrop);
+
+        //ExpManager.onNotify(player, 1);
+        //AddExperience(experienceDrop);
+
 
     }
-   
+
 
 }
