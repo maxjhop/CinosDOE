@@ -32,20 +32,17 @@ public class ShopScript : MonoBehaviour
 
     void Update()
     {
-        if (inProx && Input.GetButtonDown("Interact") && !inShop)
+        if (Input.GetButtonDown("Interact") && inShop)
+        {
+            CloseShop();
+            inShop = false;
+        }
+
+        else if (inProx && Input.GetButtonDown("Interact") && !inShop)
         {
             OpenShop();
             inShop = true;
         }
-        /*
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (inShop)
-            {
-                CloseShop();
-                inShop = false;
-            }
-        }*/
 
         if (!inProx && inShop)
         {
@@ -55,6 +52,7 @@ public class ShopScript : MonoBehaviour
     }
     void OpenShop()
     {
+        Debug.Log("OpenShop");
         experience = ExpManager.Instance.GetExperience();
         shopMenu.SetActive(true);
         //ExperienceAvailable = GameObject.Find("TotalExp").GetComponent<Text>();
@@ -70,6 +68,7 @@ public class ShopScript : MonoBehaviour
 
     void CloseShop() 
     {
+        Debug.Log("ClosingShop");
         shopMenu.SetActive(false);
         gameplayMenu.SetActive(true);
         Cursor.lockState = CursorLockMode.Locked;
