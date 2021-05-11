@@ -6,9 +6,10 @@ using UnityEngine.UI;
 public class WaveCounter : MonoBehaviour
 {
     public Text waveNumber;
-    private int num = 0;
-    private int duration = 4;
-    public bool testFlag = false;
+    private int num = 1;
+    //private int duration = 6;
+    //public bool testFlag = false;
+    public bool beginWave = true;
 
     // Start is called before the first frame update
     void Start()
@@ -19,21 +20,24 @@ public class WaveCounter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         // only show text for a few seconds at the start of each wave
-        if(Time.time > duration)
+        if(beginWave)
         {
-            waveNumber.enabled = false;
+            //waveNumber.enabled = false;
+            //beginWave = false;
         }
-
         if (testFlag)
         {
             UpdateNum();
             testFlag = false;
         }
+        */
     }
 
-    void UpdateNum()
+    public void UpdateNum()
     {
+        Debug.Log("in UpdateNum()");
         num += 1;
         waveNumber.text = "Wave " + num.ToString();
     }

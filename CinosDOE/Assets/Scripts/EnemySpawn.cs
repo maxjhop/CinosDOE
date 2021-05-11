@@ -24,11 +24,16 @@ public class EnemySpawn : MonoBehaviour
     private GameObject enemyInstance; // prefab instance
     private int curEnemies;
 
+    // wave UI text info
+    public GameObject waveString;
+    private WaveCounter waveCounterScript;
+    //public WaveCounter waveCounterScript;
+
     // Start is called before the first frame update
     void Start()
     {
-        //enemyInstance = Instantiate(enemy, new Vector3(1, 2, 1), Quaternion.identity) as GameObject;
-        //enemyInstance.transform.Rotate(0f, 180f, 0f);
+        waveCounterScript = waveString.GetComponent<WaveCounter>();
+        Debug.Log(waveCounterScript);
         // create list of spawn point locations to randomly spawn enemies at 
         spawnPoints = GameObject.FindGameObjectsWithTag("Spawner");
         numberSpawnPoints = spawnPoints.Length;
@@ -68,14 +73,7 @@ public class EnemySpawn : MonoBehaviour
             // totalEnemies += 1;
             //Debug.Log("Spawning Enemy!");
         }
-        if (totalEnemies >= MAX_ENEMIES)
-        {
-            if (curEnemies == 0)
-            {
-                totalEnemies = 0;
-                waveNum += 1;
-            }
-        }
+        WaveSpawn();
     }
 
     // spawns enemy at random spawner
@@ -88,7 +86,28 @@ public class EnemySpawn : MonoBehaviour
         //Enemy enemyClone = Instantiate(enemy, new Vector3(1, 2, 1), Quaternion.identity);
         //GameObject newEnemy = enemyClone.gameObject;
         GameObject newEnemy = Instantiate(enemy.gameObject, newSpawnLocation + new Vector3(0, 3, 0), Quaternion.identity) as GameObject;
-        Debug.Log("NEW ENEMY SPAWNED");
+        //Debug.Log("NEW ENEMY SPAWNED");
         totalEnemies += 1;
+    }
+
+    void WaveSpawn()
+    {
+        if (totalEnemies >= MAX_ENEMIES)
+        {
+            if (curEnemies == 0)
+            {
+                totalEnemies = 0;
+                waveNum += 1;
+                /*
+                if(textUI != null)
+                {
+                    //Debug.Log(textUI);
+                    //textUI.GetComponent<WaveCounter>().UpdateNum();
+                    //textUI.UpdateNum();
+                }
+                */
+                waveCounterScript.UpdateNum();
+            }
+        }
     }
 }
