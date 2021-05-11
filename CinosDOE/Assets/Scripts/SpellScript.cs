@@ -8,6 +8,7 @@ public class SpellScript : MonoBehaviour
     public LayerMask playerMask;
     public GameObject explode;
     public Transform spell;
+    private AudioSource explosion;
 
     public float SpellDamage = 50;
     bool collide = false;
@@ -15,7 +16,7 @@ public class SpellScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        explosion = explode.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -51,6 +52,7 @@ public class SpellScript : MonoBehaviour
     void create_explosion()
     {
         collide = true;
+        explosion.Play();
         var projectileObj = Instantiate(explode, spell.position, Quaternion.identity) as GameObject;
         Debug.Log("BOOM!");
         Destroy(gameObject);
