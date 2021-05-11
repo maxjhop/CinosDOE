@@ -7,8 +7,7 @@ public class ExpManager : MonoBehaviour
 {
     public static ExpManager Instance { get; private set; }
 
-    public float playerHealth = 100;
-    public float experience = 0;
+    private float experience = 0;
     public Text EXP;
 
     private void Awake()
@@ -28,6 +27,10 @@ public class ExpManager : MonoBehaviour
         EXP.text = "Experience: " + experience.ToString();
     }
 
+    public float GetExperience()
+    {
+        return experience;
+    }
 
 
 

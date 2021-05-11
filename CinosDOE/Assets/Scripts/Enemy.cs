@@ -53,10 +53,7 @@ public class Enemy : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
-
-        Debug.Log(ExpManager.Instance.experience);
-    
+    { 
         player = GameObject.FindWithTag("Player");
         playertrans = player.transform;
         rb = GetComponent<Rigidbody>();

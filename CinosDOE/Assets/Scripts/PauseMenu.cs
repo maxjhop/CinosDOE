@@ -8,8 +8,20 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool GamePaused = false;
     public GameObject pauseMenu;
+    public GameObject shopMenu;
+    public GameObject shop;
+    private ShopScript shopScript;
+
+    void Start()
+    {
+        shopScript = shop.GetComponent<ShopScript>();
+    }
 
     public void Resume() {
+        if (shopScript.inShop == true)
+        {
+            shopMenu.SetActive(true);
+        }
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         GamePaused = false;
@@ -18,6 +30,10 @@ public class PauseMenu : MonoBehaviour
     }
 
     void Pause() {
+        if (shopMenu.activeSelf == true)
+        {
+            shopMenu.SetActive(false);
+        }
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         GamePaused = true;
