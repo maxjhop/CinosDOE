@@ -57,6 +57,11 @@ public class FireScript : MonoBehaviour
             projectileObj.GetComponent<Rigidbody>().velocity = (destination - firepoint.position).normalized * projectileSpeed;
             
         }
-        
+        /*
+        if (Input.GetKeyDown("b") && CanUseBurst && Time.time > nextBurst)
+        {
+            Debug.Log("BURST FIRE!");
+        }
+        */
     }
 }

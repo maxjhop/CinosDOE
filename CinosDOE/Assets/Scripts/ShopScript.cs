@@ -10,6 +10,7 @@ public class ShopScript : MonoBehaviour
     public GameObject shopMenu;
     public GameObject gameplayMenu;
     public TMP_Text ExperienceAvailable;
+    public Button BurstSpellBuyButton;
     public Text EnterShop;
     public bool inProx = false;
     public bool inShop = false;
@@ -95,13 +96,14 @@ public class ShopScript : MonoBehaviour
         
     }
 
-    public void Spell1()
+    public void BurstSpellUnlock()
     {
         if (experience < 45)
             Debug.Log("Not Enough");
 
         else
         {
+            BurstSpellBuyButton.interactable = false;
             ExpManager.Instance.SubExperience(45);
             experience = ExpManager.Instance.GetExperience();
             ExperienceAvailable.text = "Total Experience: " + experience.ToString();
