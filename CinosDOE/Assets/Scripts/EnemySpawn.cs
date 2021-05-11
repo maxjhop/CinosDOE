@@ -11,7 +11,7 @@ public class EnemySpawn : MonoBehaviour
 
     // enemy wave info
     private float intervalTime = 0.0f;
-    private float addedTime = 1f;
+    private float addedTime = 3f;
     private int totalEnemies;
     private int waveNum = 0;
     public int MAX_ENEMIES = 5;
@@ -87,7 +87,7 @@ public class EnemySpawn : MonoBehaviour
         Vector3 newSpawnLocation = spawnPointPositions[randLoc]; // += new Vector3(0, 3, 0);
         //Enemy enemyClone = Instantiate(enemy, new Vector3(1, 2, 1), Quaternion.identity);
         //GameObject newEnemy = enemyClone.gameObject;
-        GameObject newEnemy = Instantiate(enemy.gameObject, newSpawnLocation, Quaternion.identity) as GameObject;
+        GameObject newEnemy = Instantiate(enemy.gameObject, newSpawnLocation + new Vector3(0, 3, 0), Quaternion.identity) as GameObject;
         Debug.Log("NEW ENEMY SPAWNED");
         totalEnemies += 1;
     }
