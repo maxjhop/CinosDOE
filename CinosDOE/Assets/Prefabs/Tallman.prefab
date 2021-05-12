@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 970586149802032525}
   - component: {fileID: 970586149802032526}
   - component: {fileID: 970586149802032523}
+  - component: {fileID: 3986725380988420846}
   m_Layer: 0
   m_Name: Tallman
   m_TagString: Enemy
@@ -114,6 +115,30 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3986725380988420846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124235074525769657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 162ef046fb7db72408fdf2d3f1b5b131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  speed: 5
+  EnemyHealth: 100
+  Damage: 50
+  rotationSpeed: 2
+  MovementRange: 3
+  AttackRange: 3
+  playertrans: {fileID: 0}
+  rb: {fileID: 0}
+  spell: {fileID: 0}
+  projectileSpeed: 30
+  firerate: 5
 --- !u!1 &172048942775942181
 GameObject:
   m_ObjectHideFlags: 0
