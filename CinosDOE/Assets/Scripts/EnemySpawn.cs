@@ -22,6 +22,11 @@ public class EnemySpawn : MonoBehaviour
     // enemy info
     public GameObject enemy; // the prefab
     private GameObject enemyInstance; // prefab instance
+
+    // enemy2 info
+    public GameObject enemy2;
+    private GameObject enemy2Instance;
+    
     private int curEnemies;
 
     // wave UI text info
@@ -85,7 +90,15 @@ public class EnemySpawn : MonoBehaviour
         Vector3 newSpawnLocation = spawnPointPositions[randLoc]; // += new Vector3(0, 3, 0);
         //Enemy enemyClone = Instantiate(enemy, new Vector3(1, 2, 1), Quaternion.identity);
         //GameObject newEnemy = enemyClone.gameObject;
-        GameObject newEnemy = Instantiate(enemy.gameObject, newSpawnLocation + new Vector3(0, 3, 0), Quaternion.identity) as GameObject;
+        if(waveNum == 0)
+        {
+            GameObject newEnemy = Instantiate(enemy.gameObject, newSpawnLocation + new Vector3(0, 3, 0), Quaternion.identity) as GameObject;
+
+        }
+        else
+        {
+            GameObject newEnemy = Instantiate(enemy2.gameObject, newSpawnLocation + new Vector3(0, 3, 0), Quaternion.identity) as GameObject;
+        }
         //Debug.Log("NEW ENEMY SPAWNED");
         totalEnemies += 1;
     }
