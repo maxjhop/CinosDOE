@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour
     public float rotationSpeed = 2f;
 
     //colton stuff
+    public float MovementRange = 3f;
     public float AttackRange =  3f;
     private Vector3 moveDirection;
     public Transform playertrans;
@@ -78,7 +79,7 @@ public class Enemy : MonoBehaviour
         //transform.LookAt(player.transform);
 
         float dist = Vector3.Distance(playertrans.position, transform.position);
-        if (dist > 3)
+        if (dist > MovementRange)
         {
             transform.Translate(0, 0, speed * Time.deltaTime);
         }

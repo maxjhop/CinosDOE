@@ -383,7 +383,8 @@ MonoBehaviour:
   EnemyHealth: 100
   Damage: 50
   rotationSpeed: 10
-  AttackRange: 4
+  MovementRange: 5
+  AttackRange: 3
   playertrans: {fileID: 0}
   rb: {fileID: 0}
 --- !u!95 &-7100792459131749565
