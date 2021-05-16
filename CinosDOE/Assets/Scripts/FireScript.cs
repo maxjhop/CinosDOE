@@ -16,10 +16,12 @@ public class FireScript : MonoBehaviour
     Animator otherAnimator;
     public float fireRate = 0.1f;
     public float burstRate = 5.0f;
+    public float swingRate;
     private float nextFire = 0.0f;
     private float nextBurst = 0.0f;
-    private int numBurstShots = 0;
-    private float nextShot = 0.0f;
+    private float nextSwing = 0.0f;
+    
+
    
 
 
@@ -51,6 +53,29 @@ public class FireScript : MonoBehaviour
 
     }
 
+    void Melee()
+    {
+        nextSwing = Time.time + swingRate;
+        Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+        RaycastHit hit;
+        whoosh.Play();
+        otherAnimator.SetTrigger("Swing");
+
+        if (Physics.Raycast(ray, out hit, 7))
+        {
+            if(hit.collider.tag == "Enemy")
+            {
+                Enemy enemy = hit.collider.gameObject.transform.GetComponent<Enemy>();
+                enemy.TakeDamage(50);
+                Vector3 dir = firepoint.position - enemy.transform.position;
+                dir.Normalize();
+                dir.x = dir.x * -2;
+                dir.z = dir.z * -2;
+                enemy.GetComponent<Rigidbody>().AddForce((dir)* 500000);
+            }
+        }
+    }
+
     public IEnumerator Burst()
     {
         for (int i = 0; i < 3; i++)
@@ -77,14 +102,22 @@ public class FireScript : MonoBehaviour
         
         
 
-        if (Input.GetButtonDown("Fire1") && Time.time > nextFire)
+        if (Input.GetButtonDown("Fire1") && Time.time > nextSwing)
         {
-            ShootMain();
-
+            //ShootMain();
+            Melee();
+            
         }
 
-       
-        
+        if (Input.GetButtonDown("Fire2") && Time.time > nextFire)
+        {
+            ShootMain();
+            //Melee();
+            
+        }
+
+
+
         if (Input.GetKeyDown("b") && AbilityTracker.Instance.HasAbility("Burst") && Time.time > nextBurst)
         {
             Debug.Log("burst!");

@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: WandAnimation
+  m_Name: SwordShoot
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -262,14 +262,14 @@ AnimationClip:
       - serializedVersion: 3
         time: 0.2
         value: {x: 0.49810064, y: 0.5812508, z: 0.3334713}
-        inSlope: {x: 0, y: 0.044217113, z: 0}
-        outSlope: {x: 0, y: 0.044217113, z: 0}
+        inSlope: {x: 0, y: 0.03537368, z: 0}
+        outSlope: {x: 0, y: 0.03537368, z: 0}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-        time: 0.25
+        time: 0.26666668
         value: {x: 0.498, y: 0.618, z: 0.572}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
@@ -457,7 +457,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.25
+        time: 0.26666668
         value: 0.498
         inSlope: 0
         outSlope: 0
@@ -595,14 +595,14 @@ AnimationClip:
       - serializedVersion: 3
         time: 0.2
         value: 0.5812508
-        inSlope: 0.044217113
-        outSlope: 0.044217113
+        inSlope: 0.03537368
+        outSlope: 0.03537368
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.25
+        time: 0.26666668
         value: 0.618
         inSlope: 0
         outSlope: 0
@@ -747,7 +747,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.25
+        time: 0.26666668
         value: 0.572
         inSlope: 0
         outSlope: 0

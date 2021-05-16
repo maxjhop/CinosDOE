@@ -83,6 +83,7 @@ public class ShopScript : MonoBehaviour
         {
             EnterShop.text = "Prese [E] to enter shop.";
             inProx = true;
+            Debug.Log("INPROX");
         }    
     }
 
@@ -104,6 +105,8 @@ public class ShopScript : MonoBehaviour
         else
         {
             BurstSpellBuyButton.interactable = false;
+            TMP_Text buttonText = BurstSpellBuyButton.transform.GetChild(1).GetComponent<TMP_Text>();
+            buttonText.text = "Purchased!";
             ExpManager.Instance.SubExperience(45);
             experience = ExpManager.Instance.GetExperience();
             ExperienceAvailable.text = "Total Experience: " + experience.ToString();
