@@ -10,6 +10,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject shopMenu;
     public GameObject shop;
+    public GameObject gameplayUI;
     private ShopScript shopScript;
 
     void Start()
@@ -23,6 +24,7 @@ public class PauseMenu : MonoBehaviour
             shopMenu.SetActive(true);
         }
         pauseMenu.SetActive(false);
+        gameplayUI.SetActive(true);
         Time.timeScale = 1f;
         GamePaused = false;
         Cursor.lockState = CursorLockMode.Locked;
@@ -35,6 +37,7 @@ public class PauseMenu : MonoBehaviour
             shopMenu.SetActive(false);
         }
         pauseMenu.SetActive(true);
+        gameplayUI.SetActive(false);
         Time.timeScale = 0f;
         GamePaused = true;
         Cursor.lockState = CursorLockMode.None;

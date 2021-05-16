@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.27186838, g: 0.063125186, b: 0.063125186, a: 1}
+  m_IndirectSpecularColor: {r: 0.2718694, g: 0.063125186, b: 0.063125186, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -994,7 +994,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 0.6698113, g: 0.22432362, b: 0.22432362, a: 1}
-  m_Intensity: 1
+  m_Intensity: 1.5
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -1713,7 +1713,7 @@ GameObject:
   - component: {fileID: 647560959}
   - component: {fileID: 647560958}
   - component: {fileID: 647560957}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1866,11 +1866,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2593721533590786506, guid: 46bf009d5cc74e043822aa2c2a110d30, type: 3}
       propertyPath: verticalSpeed
-      value: 500
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 2593721533590786506, guid: 46bf009d5cc74e043822aa2c2a110d30, type: 3}
       propertyPath: horizontalSpeed
-      value: 500
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 2593721533721930758, guid: 46bf009d5cc74e043822aa2c2a110d30, type: 3}
       propertyPath: EXP
@@ -2115,7 +2115,7 @@ GameObject:
   - component: {fileID: 721441485}
   - component: {fileID: 721441484}
   - component: {fileID: 721441483}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4355,7 +4355,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 223}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2056618667
@@ -4708,6 +4708,7 @@ MonoBehaviour:
   pauseMenu: {fileID: 199664409}
   shopMenu: {fileID: 364634362}
   shop: {fileID: 1276793607}
+  gameplayUI: {fileID: 207726776}
 --- !u!114 &2125810160
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -23,11 +23,13 @@ public class WaveCounter : MonoBehaviour
         if (showingText && (Time.time - elapsed) > 4)
         {
             waveNumber.enabled = false;
+            showingText = false;
         }
-        if(num > MAX_WAVES)
+        if(!showingText && (num > MAX_WAVES))
         {
             waveNumber.text = "LEVEL COMPLETE!";
-            showingText = false;
+            elapsed = Time.time;
+            showingText = true;
         }
     }
 
@@ -39,5 +41,9 @@ public class WaveCounter : MonoBehaviour
         waveNumber.text = "Wave " + num.ToString();
         elapsed = Time.time;
         showingText = true;
+        if(num > MAX_WAVES)
+        {
+            showingText = false;
+        }
     }
 }
