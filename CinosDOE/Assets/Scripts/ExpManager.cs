@@ -13,6 +13,7 @@ public class ExpManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        EXP.text = "Experience: " + experience.ToString();
     }
 
     public void AddExperience(int exp)

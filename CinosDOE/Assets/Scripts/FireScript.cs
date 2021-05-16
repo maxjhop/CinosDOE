@@ -15,12 +15,16 @@ public class FireScript : MonoBehaviour
     public GameObject wand;
     Animator otherAnimator;
     public float fireRate = 0.1f;
+    public float burstRate = 0.0f;
     private float nextFire = 0.0f;
+    private float nextBurst = 0.0f;
+
     // Start is called before the first frame update
     void Start()
     {
         otherAnimator = wand.GetComponent<Animator>();
         whoosh = wand.GetComponent<AudioSource>();
+        //AbilityTracker.Instance.AddAbility("Burst");
     }
 
     // Update is called once per frame
@@ -57,11 +61,19 @@ public class FireScript : MonoBehaviour
             projectileObj.GetComponent<Rigidbody>().velocity = (destination - firepoint.position).normalized * projectileSpeed;
             
         }
-        /*
-        if (Input.GetKeyDown("b") && CanUseBurst && Time.time > nextBurst)
+
+       
+        
+        if (Input.GetKeyDown("b") && AbilityTracker.Instance.HasAbility("Burst") && Time.time > nextBurst)
         {
+            nextBurst = Time.time + burstRate;
             Debug.Log("BURST FIRE!");
         }
-        */
+        else if (Input.GetKeyDown("b"))
+        {
+            Debug.Log("Can't use burst!");
+        }
+        
+
     }
 }

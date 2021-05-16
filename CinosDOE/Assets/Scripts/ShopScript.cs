@@ -107,6 +107,8 @@ public class ShopScript : MonoBehaviour
             ExpManager.Instance.SubExperience(45);
             experience = ExpManager.Instance.GetExperience();
             ExperienceAvailable.text = "Total Experience: " + experience.ToString();
+
+            AbilityTracker.Instance.AddAbility("Burst");
         }
     }
 }

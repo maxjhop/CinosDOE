@@ -52,7 +52,7 @@ public class SpellScript : MonoBehaviour
     void create_explosion()
     {
         collide = true;
-        explosion.Play();
+        //explosion.Play();
         var projectileObj = Instantiate(explode, spell.position, Quaternion.identity) as GameObject;
         Debug.Log("BOOM!");
         Destroy(gameObject);

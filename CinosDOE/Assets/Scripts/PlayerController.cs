@@ -17,12 +17,19 @@ public class PlayerController : MonoBehaviour
     public LayerMask groundMask;
     Vector3 velocity;
     bool isGrounded;
+    private AudioSource wings;
     public float FlyHeight = 20f;
     private bool fly = false;
     private float flyStart;
     private float descendCooldown = 2f;
     private float flyCooldownStart = 0f;
     private float flyCooldown = 5f;
+
+
+    void Start()
+    {
+        wings = GetComponent<AudioSource>();
+    }
 
     void FlyAbility() 
     {
@@ -33,6 +40,7 @@ public class PlayerController : MonoBehaviour
             velocity.y = MovementSpeed * 10;
             characterController.Move(velocity * Time.deltaTime);
             fly = true;
+            wings.Play();
             //Cooldowns.text = flyCooldownStart.ToString();
 
 
@@ -51,6 +59,7 @@ public class PlayerController : MonoBehaviour
                     Gravity = 18f;
                     fly = false;
                     descendCooldown = 2f;
+                    
                 }
 
             }
