@@ -15,9 +15,13 @@ public class FireScript : MonoBehaviour
     public GameObject wand;
     Animator otherAnimator;
     public float fireRate = 0.1f;
-    public float burstRate = 0.0f;
+    public float burstRate = 5.0f;
     private float nextFire = 0.0f;
     private float nextBurst = 0.0f;
+    private int numBurstShots = 0;
+    private float nextShot = 0.0f;
+   
+
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +29,38 @@ public class FireScript : MonoBehaviour
         otherAnimator = wand.GetComponent<Animator>();
         whoosh = wand.GetComponent<AudioSource>();
         //AbilityTracker.Instance.AddAbility("Burst");
+    }
+
+    void ShootMain()
+    {
+        nextFire = Time.time + fireRate;
+        whoosh.Play();
+
+
+        Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit))
+            destination = hit.point;
+        else
+            destination = ray.GetPoint(1000);
+
+        var projectileObj = Instantiate(spell, firepoint.position, Quaternion.identity) as GameObject;
+        otherAnimator.SetTrigger("Fire");
+        projectileObj.GetComponent<Rigidbody>().velocity = (destination - firepoint.position).normalized * projectileSpeed;
+
+    }
+
+    public IEnumerator Burst()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            Debug.Log("In burst");
+            ShootMain();
+            yield return new WaitForSeconds(0.1f);
+        }
+
+        
     }
 
     // Update is called once per frame
@@ -43,31 +79,17 @@ public class FireScript : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1") && Time.time > nextFire)
         {
+            ShootMain();
 
-            nextFire = Time.time + fireRate;
-            whoosh.Play();
-
-
-            Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
-            RaycastHit hit;
-
-            if (Physics.Raycast(ray, out hit))
-                destination = hit.point;
-            else
-                destination = ray.GetPoint(1000);
-
-            var projectileObj = Instantiate(spell, firepoint.position, Quaternion.identity) as GameObject;
-            otherAnimator.SetTrigger("Fire");
-            projectileObj.GetComponent<Rigidbody>().velocity = (destination - firepoint.position).normalized * projectileSpeed;
-            
         }
 
        
         
         if (Input.GetKeyDown("b") && AbilityTracker.Instance.HasAbility("Burst") && Time.time > nextBurst)
         {
+            Debug.Log("burst!");
             nextBurst = Time.time + burstRate;
-            Debug.Log("BURST FIRE!");
+            StartCoroutine(Burst());
         }
         else if (Input.GetKeyDown("b"))
         {
