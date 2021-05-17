@@ -16,19 +16,23 @@ public class PlayerController : MonoBehaviour
     public Transform groundCheck;
     public LayerMask groundMask;
     Vector3 velocity;
-    bool isGrounded;
-    private AudioSource wings;
+    private bool isGrounded;
+    //private bool isFalling;
+    public AudioSource wings;
+    public AudioSource thud;
     public float FlyHeight = 20f;
     private bool fly = false;
     private float flyStart;
     private float descendCooldown = 2f;
     private float flyCooldownStart = 0f;
     private float flyCooldown = 5f;
+    //private float jumpStart = 0;
+    
 
 
     void Start()
     {
-        wings = GetComponent<AudioSource>();
+        //wings = GetComponent<AudioSource>();
     }
 
     void FlyAbility() 
@@ -75,6 +79,7 @@ public class PlayerController : MonoBehaviour
         {
             Cooldowns.text = "";
         }
+        
 
     }
 
@@ -97,7 +102,7 @@ public class PlayerController : MonoBehaviour
         // Gravity
         if (isGrounded && velocity.y < 0)
         {
-           velocity.y = 0f;
+            velocity.y = 0f;
             
         }
         

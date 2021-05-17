@@ -7,7 +7,9 @@ public class FireScript : MonoBehaviour
 {
     
     public Camera cam;
+    public GameObject player;
     private AudioSource whoosh;
+    private PlayerStats playerStats;
     public GameObject spell;
     public Transform firepoint;
     public float projectileSpeed = 30;
@@ -30,13 +32,16 @@ public class FireScript : MonoBehaviour
     {
         otherAnimator = wand.GetComponent<Animator>();
         whoosh = wand.GetComponent<AudioSource>();
+        playerStats = player.GetComponent<PlayerStats>();
         //AbilityTracker.Instance.AddAbility("Burst");
     }
 
     void ShootMain()
     {
+
         nextFire = Time.time + fireRate;
         whoosh.Play();
+        
 
 
         Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
@@ -104,15 +109,18 @@ public class FireScript : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1") && Time.time > nextSwing)
         {
-            //ShootMain();
+            
             Melee();
             
         }
 
         if (Input.GetButtonDown("Fire2") && Time.time > nextFire)
         {
-            ShootMain();
-            //Melee();
+            if (playerStats.mana >= 20) 
+            { 
+                ShootMain();
+                playerStats.SpendMana(20);
+            }
             
         }
 
@@ -120,9 +128,13 @@ public class FireScript : MonoBehaviour
 
         if (Input.GetKeyDown("b") && AbilityTracker.Instance.HasAbility("Burst") && Time.time > nextBurst)
         {
-            Debug.Log("burst!");
-            nextBurst = Time.time + burstRate;
-            StartCoroutine(Burst());
+            if (playerStats.mana >= 50)
+            {
+                Debug.Log("burst!");
+                playerStats.SpendMana(50);
+                nextBurst = Time.time + burstRate;
+                StartCoroutine(Burst());
+            }
         }
         else if (Input.GetKeyDown("b"))
         {

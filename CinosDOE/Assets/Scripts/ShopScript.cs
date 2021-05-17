@@ -79,6 +79,7 @@ public class ShopScript : MonoBehaviour
 
     void OnTriggerEnter(Collider other) 
     {
+
         if (other.gameObject == player && !inCombat) 
         {
             EnterShop.text = "Prese [E] to enter shop.";
