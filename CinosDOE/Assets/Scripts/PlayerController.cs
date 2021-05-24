@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
     private float descendCooldown = 2f;
     private float flyCooldownStart = 0f;
     private float flyCooldown = 5f;
+    private float buttonHeld = 0f;
     //private float jumpStart = 0;
     
 
@@ -94,9 +95,31 @@ public class PlayerController : MonoBehaviour
         characterController.Move(move * Time.deltaTime);
 
         if (Input.GetButtonDown("Jump") && isGrounded) {
+            buttonHeld = Time.time + .5f;
             Debug.Log("Jump");
             velocity.y = jumpHeight;
             characterController.Move(velocity * Time.deltaTime);
+        }
+
+        if (Input.GetButton("Jump") && !isGrounded && velocity.y < 0)
+        {
+            if (Time.time >= buttonHeld)
+            {
+                Gravity = 4.4f; 
+            }
+        }
+        else
+        {
+            Gravity = 18f;
+        }
+
+        if (Input.GetButton("Sprint") && !fly)
+        {
+            MovementSpeed = 18f;
+        }
+        else
+        {
+            MovementSpeed = 10f;
         }
 
         // Gravity
