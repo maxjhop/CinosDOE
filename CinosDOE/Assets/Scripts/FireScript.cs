@@ -10,6 +10,7 @@ public class FireScript : MonoBehaviour
     public GameObject player;
     private AudioSource whoosh;
     private PlayerStats playerStats;
+    private PlayerController playerController;
     public GameObject spell;
     public Transform firepoint;
     public float projectileSpeed = 30;
@@ -22,6 +23,8 @@ public class FireScript : MonoBehaviour
     private float nextFire = 0.0f;
     private float nextBurst = 0.0f;
     private float nextSwing = 0.0f;
+    private float movementCooldown = 0.0f;
+    private bool inAOE = false;
     
 
    
@@ -33,6 +36,7 @@ public class FireScript : MonoBehaviour
         otherAnimator = wand.GetComponent<Animator>();
         whoosh = wand.GetComponent<AudioSource>();
         playerStats = player.GetComponent<PlayerStats>();
+        playerController = player.GetComponent<PlayerController>();
         //AbilityTracker.Instance.AddAbility("Burst");
     }
 
@@ -66,7 +70,7 @@ public class FireScript : MonoBehaviour
         whoosh.Play();
         otherAnimator.SetTrigger("Swing");
 
-        if (Physics.Raycast(ray, out hit, 7))
+        if (Physics.Raycast(ray, out hit, 8))
         {
             if(hit.collider.tag == "Enemy")
             {
@@ -136,11 +140,27 @@ public class FireScript : MonoBehaviour
                 StartCoroutine(Burst());
             }
         }
+
         else if (Input.GetKeyDown("b"))
         {
             Debug.Log("Can't use burst!");
         }
-        
+
+        if (Input.GetKeyDown("q"))
+        {
+            otherAnimator.SetTrigger("AOE");
+            playerController.MovementSpeed = 0f;
+            movementCooldown = Time.time + 1f;
+            inAOE = true;
+            
+
+        }
+
+        if (Time.time >= movementCooldown && inAOE)
+        {
+            playerController.MovementSpeed = 10f;
+            inAOE = false;
+        }
 
     }
 }

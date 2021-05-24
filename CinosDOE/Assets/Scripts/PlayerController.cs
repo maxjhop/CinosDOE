@@ -87,6 +87,10 @@ public class PlayerController : MonoBehaviour
     
     void Update()
     {
+        if(MovementSpeed == 0)
+        {
+            Debug.Log("It's zero");
+        }
         isGrounded = Physics.CheckSphere(groundCheck.position, distToGround, groundMask);
         // player movement - forward, backward, left, right
         float horizontal = Input.GetAxis("Horizontal") * MovementSpeed;
@@ -113,11 +117,11 @@ public class PlayerController : MonoBehaviour
             Gravity = 18f;
         }
 
-        if (Input.GetButton("Sprint") && !fly)
+        if (Input.GetButton("Sprint") && !fly && MovementSpeed != 0)
         {
             MovementSpeed = 18f;
         }
-        else
+        else if (MovementSpeed != 0)
         {
             MovementSpeed = 10f;
         }
