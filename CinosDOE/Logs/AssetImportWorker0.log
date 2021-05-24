@@ -1,0 +1,318 @@
+Using pre-set license
+Built from '2020.3/release' branch; Version is '2020.3.1f1 (77a89f25062f) revision 7841951'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Home; OS build 19042.985; Version 2009; 64bit' Language: 'en' Physical Memory: 32674 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+D:\Unity\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+D:/Unity/CinosDOE/CinosDOE
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+52263
+Successfully changed project path to: D:/Unity/CinosDOE/CinosDOE
+D:/Unity/CinosDOE/CinosDOE
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 29.95 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.3.1f1 (77a89f25062f)
+[Subsystems] Discovering subsystems at path D:/Unity/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/Unity/CinosDOE/CinosDOE/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: AMD Radeon RX 5700 XT (ID=0x731f)
+    Vendor:   
+    VRAM:     8151 MB
+    Driver:   26.20.15029.27017
+Initialize mono
+Mono path[0] = 'D:/Unity/Editor/Data/Managed'
+Mono path[1] = 'D:/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'D:/Unity/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56556
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/Unity/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: D:/Unity/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.162108 seconds.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 21.72 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.821 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.045570 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.28 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.348 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Refreshing native plugins compatible for Editor in 0.30 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1182 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 151.8 MB.
+System memory in use after: 151.9 MB.
+
+Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 1657.
+Total: 1.688600 ms (FindLiveObjects: 0.217600 ms CreateObjectMapping: 0.046500 ms MarkObjects: 1.404500 ms  DeleteObjects: 0.019000 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Scenes/LevelTwo.unity
+  artifactKey: Guid(5f33bf1545ac3084db70c440cb9144cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/LevelTwo.unity using Guid(5f33bf1545ac3084db70c440cb9144cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6a5481cc9aa8dff22707a9e716bf21d') in 0.016004 seconds
+  Import took 0.018073 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 178.861953 seconds.
+  path: Assets/Scenes/LevelTwo.unity
+  artifactKey: Guid(5f33bf1545ac3084db70c440cb9144cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/LevelTwo.unity using Guid(5f33bf1545ac3084db70c440cb9144cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '026ebce8ee7a3085353b04ef3c92828b') in 0.002552 seconds
+  Import took 0.004921 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000322 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.29 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.566 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.28 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1163 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 150.7 MB.
+System memory in use after: 150.8 MB.
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1660.
+Total: 1.507200 ms (FindLiveObjects: 0.177500 ms CreateObjectMapping: 0.030900 ms MarkObjects: 1.284400 ms  DeleteObjects: 0.013100 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 161.501124 seconds.
+  path: Assets/Scenes/LevelTwo.unity
+  artifactKey: Guid(5f33bf1545ac3084db70c440cb9144cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/LevelTwo.unity using Guid(5f33bf1545ac3084db70c440cb9144cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '29a86cdbbcbd38dd901f99dd805ed0e6') in 0.009999 seconds
+  Import took 0.012063 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.007232 seconds.
+  path: Assets/Scenes/LevelTwo.unity
+  artifactKey: Guid(5f33bf1545ac3084db70c440cb9144cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/LevelTwo.unity using Guid(5f33bf1545ac3084db70c440cb9144cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '29a86cdbbcbd38dd901f99dd805ed0e6') in 0.001910 seconds
+  Import took 0.003824 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000340 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.30 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.599 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.29 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1163 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 150.7 MB.
+System memory in use after: 150.8 MB.
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1663.
+Total: 1.647800 ms (FindLiveObjects: 0.179800 ms CreateObjectMapping: 0.027600 ms MarkObjects: 1.425600 ms  DeleteObjects: 0.013900 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000502 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.29 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.570 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.29 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1169 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 151.6 MB.
+System memory in use after: 151.3 MB.
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 1667.
+Total: 1.830000 ms (FindLiveObjects: 0.175000 ms CreateObjectMapping: 0.032100 ms MarkObjects: 1.343900 ms  DeleteObjects: 0.278100 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 1117.923472 seconds.
+  path: Assets/Lava_Flowing_Shader/Materials
+  artifactKey: Guid(5a27426cd347d554283a078504311f0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Lava_Flowing_Shader/Materials using Guid(5a27426cd347d554283a078504311f0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '57375e239b90b4e3a7379c48ef229bdf') in 0.008204 seconds
+  Import took 0.010561 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.010998 seconds.
+  path: Assets/Lava_Flowing_Shader/Materials
+  artifactKey: Guid(5a27426cd347d554283a078504311f0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Lava_Flowing_Shader/Materials using Guid(5a27426cd347d554283a078504311f0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '57375e239b90b4e3a7379c48ef229bdf') in 0.002160 seconds
+  Import took 0.004117 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.837283 seconds.
+  path: Assets/Lava_Flowing_Shader/Prefabs
+  artifactKey: Guid(98de54e952a28364c84cbacefd011abb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Lava_Flowing_Shader/Prefabs using Guid(98de54e952a28364c84cbacefd011abb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c54e0ecd624daec188e67e29ac47849e') in 0.006825 seconds
+  Import took 0.009054 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000397 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.29 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.583 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.43 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1169 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 151.6 MB.
+System memory in use after: 151.3 MB.
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 1670.
+Total: 1.894900 ms (FindLiveObjects: 0.208300 ms CreateObjectMapping: 0.027100 ms MarkObjects: 1.333200 ms  DeleteObjects: 0.325000 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 108.412111 seconds.
+  path: Assets/Materials/Lavabrick
+  artifactKey: Guid(2463e60d99b0a4e4eb4298e9a59a50d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Lavabrick using Guid(2463e60d99b0a4e4eb4298e9a59a50d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0906b16ec7b4fe1f30da4697e8ddcfe8') in 0.008566 seconds
+  Import took 0.010637 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001476 seconds.
+  path: Assets/Materials/Lavabrick
+  artifactKey: Guid(2463e60d99b0a4e4eb4298e9a59a50d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Lavabrick using Guid(2463e60d99b0a4e4eb4298e9a59a50d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0906b16ec7b4fe1f30da4697e8ddcfe8') in 0.001431 seconds
+  Import took 0.003109 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.280857 seconds.
+  path: Assets/Materials/Lavabrick/Lavabrick.png
+  artifactKey: Guid(ddee01e2719a1394d95c1f33ec367a3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Lavabrick/Lavabrick.png using Guid(ddee01e2719a1394d95c1f33ec367a3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '86e28b7e1782f1d3a5b053444b091c16') in 0.100987 seconds
+  Import took 0.103007 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000571 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.32 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.619 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.29 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1169 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 151.7 MB.
+System memory in use after: 151.4 MB.
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 1675.
+Total: 2.126300 ms (FindLiveObjects: 0.276400 ms CreateObjectMapping: 0.040900 ms MarkObjects: 1.458700 ms  DeleteObjects: 0.349200 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 225.387219 seconds.
+  path: Assets/Materials/Lavabrick/Lavabrick.mat
+  artifactKey: Guid(f9ce4b5b272e62e47b0c83a957786c1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Lavabrick/Lavabrick.mat using Guid(f9ce4b5b272e62e47b0c83a957786c1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '23a55986787e230b4eb5f9f41d7e27d0') in 0.091831 seconds
+  Import took 0.100511 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000559 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.30 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.619 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.30 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1169 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 157.2 MB.
+System memory in use after: 156.9 MB.
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 1722.
+Total: 1.965500 ms (FindLiveObjects: 0.228700 ms CreateObjectMapping: 0.028900 ms MarkObjects: 1.437000 ms  DeleteObjects: 0.269900 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 783.929479 seconds.
+  path: Assets/Materials/Lavabrick/Lavabrick.mat
+  artifactKey: Guid(f9ce4b5b272e62e47b0c83a957786c1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Lavabrick/Lavabrick.mat using Guid(f9ce4b5b272e62e47b0c83a957786c1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '282bf38746ed0cadd99e22e831260e3e') in 0.062455 seconds
+  Import took 0.064842 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
