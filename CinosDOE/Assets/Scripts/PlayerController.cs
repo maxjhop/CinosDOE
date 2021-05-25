@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     public AudioSource thud;
     public float FlyHeight = 20f;
     private bool fly = false;
+    private bool flyPeak = false;
     private float flyStart;
     private float descendCooldown = 2f;
     private float flyCooldownStart = 0f;
@@ -42,7 +43,7 @@ public class PlayerController : MonoBehaviour
         {
             flyStart = groundCheck.position.y;
             flyCooldownStart = flyCooldown;
-            velocity.y = MovementSpeed * 10;
+            velocity.y = MovementSpeed * 5;
             characterController.Move(velocity * Time.deltaTime);
             fly = true;
             wings.Play();
@@ -55,6 +56,10 @@ public class PlayerController : MonoBehaviour
             Debug.Log(fly);
             if ((groundCheck.position.y - flyStart) > FlyHeight)
             {
+                flyPeak = true;
+            }
+            if (flyPeak) 
+            { 
                 velocity.y = 0f;
                 characterController.Move(velocity * Time.deltaTime);
                 descendCooldown -= Time.deltaTime;
@@ -64,6 +69,7 @@ public class PlayerController : MonoBehaviour
                     Gravity = 18f;
                     fly = false;
                     descendCooldown = 2f;
+                    flyPeak = false;
                     
                 }
 

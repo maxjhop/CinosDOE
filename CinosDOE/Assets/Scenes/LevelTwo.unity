@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1412,10 +1412,10 @@ RectTransform:
   m_Father: {fileID: 760212053}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -451, y: -247}
-  m_SizeDelta: {x: 212.7178, y: 14.9777}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 175, y: 30}
+  m_SizeDelta: {x: 212.7178, y: 14.977692}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &472677574
 MonoBehaviour:
@@ -4094,7 +4094,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.42079163, y: -0.42071533}
+  m_AnchoredPosition: {x: -0.42077637, y: -0.42071533}
   m_SizeDelta: {x: 4.9739075, y: 4.375801}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1104694620
@@ -4386,7 +4386,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.42079163, y: -0.42071533}
+  m_AnchoredPosition: {x: -0.42077637, y: -0.42071533}
   m_SizeDelta: {x: 4.9739075, y: 4.375801}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1189932623
@@ -5208,11 +5208,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2593721533590786506, guid: 46bf009d5cc74e043822aa2c2a110d30, type: 3}
       propertyPath: verticalSpeed
-      value: 300
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 2593721533590786506, guid: 46bf009d5cc74e043822aa2c2a110d30, type: 3}
       propertyPath: horizontalSpeed
-      value: 300
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 2593721533721930760, guid: 46bf009d5cc74e043822aa2c2a110d30, type: 3}
       propertyPath: thud
@@ -7148,10 +7148,10 @@ RectTransform:
   m_Father: {fileID: 760212053}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 451, y: -247}
-  m_SizeDelta: {x: 212.7178, y: 14.9777}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -175, y: 30}
+  m_SizeDelta: {x: 212.71777, y: 14.977692}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1865030402
 MonoBehaviour:
