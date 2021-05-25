@@ -10,12 +10,14 @@ public class MouseMovement : MonoBehaviour
     public float verticalSpeed = 1000f;
     private float xRotation = 0.0f;
     private float yRotation = 0.0f;
-    private Camera cam;
+    //private Camera cam;
     public Transform playerBody;
+    public GameObject cam;
+
 
     void Start()
     {
-        cam = Camera.main;
+        //cam = Camera.main;
         Cursor.lockState = CursorLockMode.Locked;
     }
 

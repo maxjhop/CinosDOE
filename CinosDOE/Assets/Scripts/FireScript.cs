@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using MilkShake;
 
 public class FireScript : MonoBehaviour
 {
     
     public Camera cam;
     public GameObject player;
+    public ShakePreset ShakePreset;
+    private Shaker camShaker;
     private AudioSource whoosh;
     private PlayerStats playerStats;
     private PlayerController playerController;
@@ -17,6 +20,7 @@ public class FireScript : MonoBehaviour
     private Vector3 destination;
     public GameObject wand;
     Animator otherAnimator;
+    Animator cameraAnimator;
     public float fireRate = 0.1f;
     public float burstRate = 5.0f;
     public float swingRate;
@@ -24,6 +28,7 @@ public class FireScript : MonoBehaviour
     private float nextBurst = 0.0f;
     private float nextSwing = 0.0f;
     private float movementCooldown = 0.0f;
+    private float explosionTime = 0.0f;
     private bool inAOE = false;
     
 
@@ -34,9 +39,11 @@ public class FireScript : MonoBehaviour
     void Start()
     {
         otherAnimator = wand.GetComponent<Animator>();
+        cameraAnimator = cam.GetComponent<Animator>();
         whoosh = wand.GetComponent<AudioSource>();
         playerStats = player.GetComponent<PlayerStats>();
         playerController = player.GetComponent<PlayerController>();
+        camShaker = cam.GetComponent<Shaker>();
         //AbilityTracker.Instance.AddAbility("Burst");
     }
 
@@ -149,11 +156,17 @@ public class FireScript : MonoBehaviour
         if (Input.GetKeyDown("q"))
         {
             otherAnimator.SetTrigger("AOE");
+            cameraAnimator.SetTrigger("AOE");
+            explosionTime = Time.time + 0.75f;
             playerController.MovementSpeed = 0f;
             movementCooldown = Time.time + 1f;
             inAOE = true;
             
 
+        }
+        if (Time.time >= explosionTime && inAOE)
+        {
+            camShaker.Shake(ShakePreset);
         }
 
         if (Time.time >= movementCooldown && inAOE)

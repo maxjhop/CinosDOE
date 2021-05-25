@@ -93,10 +93,7 @@ public class PlayerController : MonoBehaviour
     
     void Update()
     {
-        if(MovementSpeed == 0)
-        {
-            Debug.Log("It's zero");
-        }
+        
         isGrounded = Physics.CheckSphere(groundCheck.position, distToGround, groundMask);
         // player movement - forward, backward, left, right
         float horizontal = Input.GetAxis("Horizontal") * MovementSpeed;
