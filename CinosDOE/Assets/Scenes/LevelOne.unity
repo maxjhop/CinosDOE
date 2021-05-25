@@ -1502,6 +1502,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 211689176}
     - target: {fileID: 2593721533721930762, guid: 46bf009d5cc74e043822aa2c2a110d30, type: 3}
+      propertyPath: AOEeffect
+      value: 
+      objectReference: {fileID: 1071518978498482736, guid: 28b4dea2e7a462245b4dab3307495447, type: 3}
+    - target: {fileID: 2593721533721930762, guid: 46bf009d5cc74e043822aa2c2a110d30, type: 3}
       propertyPath: swingRate
       value: 0.5
       objectReference: {fileID: 0}

@@ -15,6 +15,7 @@ public class FireScript : MonoBehaviour
     private PlayerStats playerStats;
     private PlayerController playerController;
     public GameObject spell;
+    public GameObject AOEeffect;
     public Transform firepoint;
     public float projectileSpeed = 30;
     private Vector3 destination;
@@ -29,6 +30,7 @@ public class FireScript : MonoBehaviour
     private float nextSwing = 0.0f;
     private float movementCooldown = 0.0f;
     private float explosionTime = 0.0f;
+    private float explCooldown = 0f;
     private bool inAOE = false;
     
 
@@ -166,13 +168,20 @@ public class FireScript : MonoBehaviour
         }
         if (Time.time >= explosionTime && inAOE)
         {
+
             camShaker.Shake(ShakePreset);
+            if (Time.time >= explCooldown)
+            {
+                var aoeexpl = Instantiate(AOEeffect, player.transform.position, Quaternion.identity) as GameObject;
+            }
+            explCooldown = Time.time + 1f;
         }
 
         if (Time.time >= movementCooldown && inAOE)
         {
             playerController.MovementSpeed = 10f;
             inAOE = false;
+            explCooldown = 0f;
         }
 
     }
