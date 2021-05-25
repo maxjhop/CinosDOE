@@ -12,11 +12,12 @@ public class PlayerController : MonoBehaviour
     public float jumpHeight = 10f;
     //distance from the middle of the collider to the ground
     public float distToGround = 1f;
-    public Text Cooldowns;
+    private bool flyTextSelected = false;
+    public GameObject Cooldowns;
     public Transform groundCheck;
     public LayerMask groundMask;
     Vector3 velocity;
-    private bool isGrounded;
+    public bool isGrounded;
     //private bool isFalling;
     public AudioSource wings;
     public AudioSource thud;
@@ -28,8 +29,9 @@ public class PlayerController : MonoBehaviour
     private float flyCooldownStart = 0f;
     private float flyCooldown = 5f;
     private float buttonHeld = 0f;
+    private Text flyText;
     //private float jumpStart = 0;
-    
+
 
 
     void Start()
@@ -42,7 +44,6 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Fly") && flyCooldownStart <= 0)
         {
             flyStart = groundCheck.position.y;
-            flyCooldownStart = flyCooldown;
             velocity.y = MovementSpeed * 5;
             characterController.Move(velocity * Time.deltaTime);
             fly = true;
@@ -70,22 +71,38 @@ public class PlayerController : MonoBehaviour
                     fly = false;
                     descendCooldown = 2f;
                     flyPeak = false;
-                    
+                    flyCooldownStart = flyCooldown;
+
                 }
 
             }
 
         }
-        else if (flyCooldownStart > 0)
+        if (flyCooldownStart > 0)
         {
-            Cooldowns.text = "Fly burst cooldown: " + Math.Round(flyCooldownStart, 2).ToString();
+            if (!flyTextSelected)
+            {
+                foreach (Transform child in Cooldowns.transform)
+                {
+                    Text Text = child.GetComponent<Text>();
+                    if (Text.text == "")
+                    {
+                        flyText = child.GetComponent<Text>();
+                        flyTextSelected = true;
+                        break;
+                    }
+                }
+            }
+            flyText.text = "Fly burst cooldown: " + Math.Round(flyCooldownStart, 2).ToString();
             flyCooldownStart -= Time.deltaTime;
+            if (flyCooldownStart <= 0 && fly == false)
+            {
+                flyText.text = "";
+                flyTextSelected = false;
+            }
 
         }
-        else if (flyCooldownStart <= 0 && fly == false) 
-        {
-            Cooldowns.text = "";
-        }
+        
         
 
     }

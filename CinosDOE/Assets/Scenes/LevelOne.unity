@@ -595,7 +595,7 @@ GameObject:
   - component: {fileID: 216231553}
   - component: {fileID: 216231552}
   m_Layer: 5
-  m_Name: Spell1
+  m_Name: BurstButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -956,7 +956,7 @@ GameObject:
   - component: {fileID: 270580819}
   - component: {fileID: 270580818}
   m_Layer: 5
-  m_Name: Spell1 (4)
+  m_Name: Spell 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2306,7 +2306,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Spell 2
+  m_text: 'AOE Slam
 
 '
   m_isRightToLeft: 0
@@ -2489,6 +2489,11 @@ MeshFilter:
 Transform:
   m_CorrespondingSourceObject: {fileID: 6305705462813471371, guid: 672a30ba16e304c48a0879b502a7bd89, type: 3}
   m_PrefabInstance: {fileID: 857631591}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &904710223 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7985695833333548928, guid: 6eec36ff958dc7244af65205dc4e2468, type: 3}
+  m_PrefabInstance: {fileID: 4462652738034031875}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &985778832
 GameObject:
@@ -3081,7 +3086,7 @@ GameObject:
   - component: {fileID: 1265067900}
   - component: {fileID: 1265067899}
   m_Layer: 5
-  m_Name: Spell1 (3)
+  m_Name: AOEButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3151,7 +3156,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1265067900}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1276793608}
+        m_TargetAssemblyTypeName: ShopScript, Assembly-CSharp
+        m_MethodName: AOESpellUnlock
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1265067900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3212,6 +3229,7 @@ MonoBehaviour:
   gameplayMenu: {fileID: 207726776}
   ExperienceAvailable: {fileID: 2105909272}
   BurstSpellBuyButton: {fileID: 216231552}
+  AOESpellBuyButton: {fileID: 1265067899}
   EnterShop: {fileID: 1892930859}
   inProx: 0
   inShop: 0
@@ -4945,6 +4963,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2832451492837633473, guid: 6eec36ff958dc7244af65205dc4e2468, type: 3}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4462652736433521407, guid: 6eec36ff958dc7244af65205dc4e2468, type: 3}
       propertyPath: m_Name
       value: IsCinos
@@ -4993,9 +5015,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4462652736433536258, guid: 6eec36ff958dc7244af65205dc4e2468, type: 3}
+      propertyPath: Cooldowns
+      value: 
+      objectReference: {fileID: 904710223}
+    - target: {fileID: 4462652736445169738, guid: 6eec36ff958dc7244af65205dc4e2468, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4462652736695076910, guid: 6eec36ff958dc7244af65205dc4e2468, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4462652736800087977, guid: 6eec36ff958dc7244af65205dc4e2468, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4462652736838616930, guid: 6eec36ff958dc7244af65205dc4e2468, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4462652736885966216, guid: 6eec36ff958dc7244af65205dc4e2468, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4462652736987451813, guid: 6eec36ff958dc7244af65205dc4e2468, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4462652736998597297, guid: 6eec36ff958dc7244af65205dc4e2468, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4462652737628007524, guid: 6eec36ff958dc7244af65205dc4e2468, type: 3}
+      propertyPath: m_Text
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4462652737752097431, guid: 6eec36ff958dc7244af65205dc4e2468, type: 3}
       propertyPath: m_AnchorMax.x
@@ -5017,5 +5071,13 @@ PrefabInstance:
       propertyPath: shop
       value: 
       objectReference: {fileID: 1276793607}
+    - target: {fileID: 6233117486465029425, guid: 6eec36ff958dc7244af65205dc4e2468, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9018818365456875400, guid: 6eec36ff958dc7244af65205dc4e2468, type: 3}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6eec36ff958dc7244af65205dc4e2468, type: 3}

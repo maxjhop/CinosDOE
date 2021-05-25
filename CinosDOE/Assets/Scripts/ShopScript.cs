@@ -11,6 +11,7 @@ public class ShopScript : MonoBehaviour
     public GameObject gameplayMenu;
     public TMP_Text ExperienceAvailable;
     public Button BurstSpellBuyButton;
+    public Button AOESpellBuyButton;
     public Text EnterShop;
     public bool inProx = false;
     public bool inShop = false;
@@ -113,6 +114,23 @@ public class ShopScript : MonoBehaviour
             ExperienceAvailable.text = "Total Experience: " + experience.ToString();
 
             AbilityTracker.Instance.AddAbility("Burst");
+        }
+    }
+
+    public void AOESpellUnlock()
+    {
+        if (experience < 100)
+            Debug.Log("Not enough experience for AOE");
+        else
+        {
+            AOESpellBuyButton.interactable = false;
+            TMP_Text buttonText = AOESpellBuyButton.transform.GetChild(1).GetComponent<TMP_Text>();
+            buttonText.text = "Purchased!";
+            ExpManager.Instance.SubExperience(100);
+            experience = ExpManager.Instance.GetExperience();
+            ExperienceAvailable.text = "Total Experience: " + experience.ToString();
+
+            AbilityTracker.Instance.AddAbility("AOE");
         }
     }
 }

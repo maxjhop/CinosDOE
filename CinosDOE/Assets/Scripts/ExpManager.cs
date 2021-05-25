@@ -7,7 +7,7 @@ public class ExpManager : MonoBehaviour
 {
     public static ExpManager Instance { get; private set; }
 
-    private float experience = 45;
+    private float experience = 100;
     public Text EXP;
 
     private void Awake()

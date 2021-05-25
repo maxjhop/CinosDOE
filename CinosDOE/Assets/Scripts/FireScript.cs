@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using MilkShake;
@@ -9,6 +10,7 @@ public class FireScript : MonoBehaviour
     
     public Camera cam;
     public GameObject player;
+    public GameObject Cooldowns;
     public ShakePreset ShakePreset;
     private Shaker camShaker;
     private AudioSource whoosh;
@@ -24,14 +26,20 @@ public class FireScript : MonoBehaviour
     Animator cameraAnimator;
     public float fireRate = 0.1f;
     public float burstRate = 5.0f;
+    public float AOERate = 7.0f;
     public float swingRate;
     private float nextFire = 0.0f;
     private float nextBurst = 0.0f;
     private float nextSwing = 0.0f;
+    private float nextAOE = 0.0f;
     private float movementCooldown = 0.0f;
     private float explosionTime = 0.0f;
     private float explCooldown = 0f;
     private bool inAOE = false;
+    private Text burstText;
+    private Text AOEText;
+    private bool burstTextSelected = false;
+    private bool aoeTextSelected = false;
     
 
    
@@ -155,14 +163,20 @@ public class FireScript : MonoBehaviour
             Debug.Log("Can't use burst!");
         }
 
-        if (Input.GetKeyDown("q"))
+        //This is the AOE ability code
+        if (Input.GetKeyDown("q") && AbilityTracker.Instance.HasAbility("AOE") && Time.time > nextAOE && playerController.isGrounded)
         {
-            otherAnimator.SetTrigger("AOE");
-            cameraAnimator.SetTrigger("AOE");
-            explosionTime = Time.time + 0.75f;
-            playerController.MovementSpeed = 0f;
-            movementCooldown = Time.time + 1f;
-            inAOE = true;
+            if (playerStats.mana >= 50)
+            {
+                nextAOE = Time.time + AOERate;
+                playerStats.SpendMana(50);
+                otherAnimator.SetTrigger("AOE");
+                cameraAnimator.SetTrigger("AOE");
+                explosionTime = Time.time + 0.75f;
+                playerController.MovementSpeed = 0f;
+                movementCooldown = Time.time + 1f;
+                inAOE = true;
+            }
             
 
         }
@@ -198,6 +212,61 @@ public class FireScript : MonoBehaviour
             inAOE = false;
             explCooldown = 0f;
         }
+        //AOE ability code ends here
+
+        //cooldown displays
+        if (nextBurst - Time.time > 0)
+        {
+            if (!burstTextSelected)
+            {
+                foreach (Transform child in Cooldowns.transform)
+                {
+                    
+                    if (child.GetComponent<Text>().text == "")
+                    {
+                        burstText = child.GetComponent<Text>();
+                        burstTextSelected = true;
+                        break;
+                    }
+
+                }
+            }
+            float burstCooldown = (nextBurst - Time.time);
+            burstText.text = "Burst cooldown: " + Math.Round(burstCooldown, 2).ToString();
+            if (burstCooldown <= 0.1)
+            {
+                burstText.text = "";
+                burstTextSelected = false;
+
+            }
+        }
+
+        if (nextAOE - Time.time > 0)
+        {
+            if (!aoeTextSelected)
+            {
+                foreach (Transform child in Cooldowns.transform)
+                {
+                    
+                    if (child.GetComponent<Text>().text == "")
+                    {
+                        AOEText = child.GetComponent<Text>();
+                        aoeTextSelected = true;
+                        break;
+                    }
+
+                }
+            }
+            float aoeCooldown = (nextAOE - Time.time);
+            AOEText.text = "AOE cooldown: " + Math.Round(aoeCooldown, 2).ToString();
+            if (aoeCooldown <= 0.1)
+            {
+                AOEText.text = "";
+                aoeTextSelected = false;
+
+            }
+        }
+        //end of cooldown displays
 
     }
 }
