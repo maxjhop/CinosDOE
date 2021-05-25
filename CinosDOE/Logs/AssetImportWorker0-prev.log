@@ -1,0 +1,142 @@
+Using pre-set license
+Built from '2020.3/release' branch; Version is '2020.3.1f1 (77a89f25062f) revision 7841951'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Home; OS build 19042.985; Version 2009; 64bit' Language: 'en' Physical Memory: 32674 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+D:\Unity\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+D:/Unity/CinosDOE/CinosDOE
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+51365
+Successfully changed project path to: D:/Unity/CinosDOE/CinosDOE
+D:/Unity/CinosDOE/CinosDOE
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 21.54 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.3.1f1 (77a89f25062f)
+[Subsystems] Discovering subsystems at path D:/Unity/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/Unity/CinosDOE/CinosDOE/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: AMD Radeon RX 5700 XT (ID=0x731f)
+    Vendor:   
+    VRAM:     8151 MB
+    Driver:   26.20.15029.27017
+Initialize mono
+Mono path[0] = 'D:/Unity/Editor/Data/Managed'
+Mono path[1] = 'D:/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'D:/Unity/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56604
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/Unity/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: D:/Unity/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.000944 seconds.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 22.19 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.656 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.000348 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.29 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.607 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Refreshing native plugins compatible for Editor in 0.34 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1187 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 155.2 MB.
+System memory in use after: 155.3 MB.
+
+Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 1669.
+Total: 1.885100 ms (FindLiveObjects: 0.230500 ms CreateObjectMapping: 0.044900 ms MarkObjects: 1.588500 ms  DeleteObjects: 0.019800 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Materials/TileableBricksWall
+  artifactKey: Guid(c6f57a1498d1bff49bf4ab5e4bfa87a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/TileableBricksWall using Guid(c6f57a1498d1bff49bf4ab5e4bfa87a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd723c7541c4de842caa9a781ff70cd8b') in 0.007211 seconds
+  Import took 0.009274 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 78.236211 seconds.
+  path: Assets/Materials/TileableBricksWall/Materials
+  artifactKey: Guid(523d3c2d1ac6486448fcbff55949429a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/TileableBricksWall/Materials using Guid(523d3c2d1ac6486448fcbff55949429a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bdb54dc45a3e794383d79b71aa4ee5a4') in 0.006104 seconds
+  Import took 0.008412 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.295092 seconds.
+  path: Assets/Materials/TileableBricksWall/Textures
+  artifactKey: Guid(0640fca03fda9fc40a8c999a95828a08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/TileableBricksWall/Textures using Guid(0640fca03fda9fc40a8c999a95828a08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c0740bbb99be3d5252686dba4814209') in 0.005570 seconds
+  Import took 0.007813 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.780934 seconds.
+  path: Assets/Materials/TileableBricksWall/Textures/Bricks_diffuse.TGA
+  artifactKey: Guid(e0151d2c7bc1bfc4a82177d0298dd56e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/TileableBricksWall/Textures/Bricks_diffuse.TGA using Guid(e0151d2c7bc1bfc4a82177d0298dd56e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7038081b8e481b718b9e9eb7e3cb57a3') in 0.074194 seconds
+  Import took 0.076337 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 367.391910 seconds.
+  path: Assets/Materials/TileableBricksWall/Materials/Bricks_01_mat2.mat
+  artifactKey: Guid(333a08b54ec5eec4f84f74d910ad751e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/TileableBricksWall/Materials/Bricks_01_mat2.mat using Guid(333a08b54ec5eec4f84f74d910ad751e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '53e9f12d56149599be388c4c5c8c0994') in 0.083783 seconds
+  Import took 0.086430 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 37.211668 seconds.
+  path: Assets/Materials/TileableBricksWall/Materials/Bricks_01_mat.mat
+  artifactKey: Guid(3abf473d50106f44c9611c2c76fd9a91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/TileableBricksWall/Materials/Bricks_01_mat.mat using Guid(3abf473d50106f44c9611c2c76fd9a91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ebe5c397bf25993fe948e33283e55d26') in 0.026604 seconds
+  Import took 0.028899 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002030 seconds.
+  path: Assets/Materials/TileableBricksWall/Materials/Bricks_01_mat.mat
+  artifactKey: Guid(3abf473d50106f44c9611c2c76fd9a91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/TileableBricksWall/Materials/Bricks_01_mat.mat using Guid(3abf473d50106f44c9611c2c76fd9a91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ebe5c397bf25993fe948e33283e55d26') in 0.011951 seconds
+  Import took 0.014091 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 13.609744 seconds.
+  path: Assets/Materials/TileableBricksWall/Materials/Bricks_01_mat2.mat
+  artifactKey: Guid(333a08b54ec5eec4f84f74d910ad751e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/TileableBricksWall/Materials/Bricks_01_mat2.mat using Guid(333a08b54ec5eec4f84f74d910ad751e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '322ead26a64350c55a9e4d6d73c77e86') in 0.012363 seconds
+  Import took 0.014568 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
