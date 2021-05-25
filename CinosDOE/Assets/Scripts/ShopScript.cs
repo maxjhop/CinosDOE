@@ -15,7 +15,7 @@ public class ShopScript : MonoBehaviour
     public bool inProx = false;
     public bool inShop = false;
     private bool inCombat = false;
-    private Camera cam;
+    public GameObject cam;
     private MouseMovement mmscript;
     private float hCache;
     private float vCache;
@@ -26,7 +26,7 @@ public class ShopScript : MonoBehaviour
 
     void Start()
     {
-        cam = Camera.main;
+        //cam = Camera.main;
         mmscript = cam.GetComponent<MouseMovement>();
 
     }
