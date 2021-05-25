@@ -173,8 +173,23 @@ public class FireScript : MonoBehaviour
             if (Time.time >= explCooldown)
             {
                 var aoeexpl = Instantiate(AOEeffect, player.transform.position, Quaternion.identity) as GameObject;
+                Collider[] hitColliders = Physics.OverlapSphere(player.transform.position, 10);
+                foreach (var collider in hitColliders)
+                {
+                    if (collider.tag == "Enemy")
+                    {
+                        Enemy enemy = collider.gameObject.transform.GetComponent<Enemy>();
+                        enemy.TakeDamage(25);
+                        Vector3 dir = firepoint.position - enemy.transform.position;
+                        dir.Normalize();
+                        dir.x = dir.x * -2;
+                        dir.z = dir.z * -2;
+                        enemy.GetComponent<Rigidbody>().AddForce((dir) * 500000);
+                    }
+                }
             }
             explCooldown = Time.time + 1f;
+           
         }
 
         if (Time.time >= movementCooldown && inAOE)

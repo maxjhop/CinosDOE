@@ -82,9 +82,5 @@ public class PlayerStats : MonoBehaviour
             Heal(0.1f);
         }
 
-        if (Input.GetKeyDown("q"))
-        {
-            TakeDamage(20);
-        }
     }
 }
