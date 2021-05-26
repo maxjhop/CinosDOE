@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 8461766406151750275}
   - component: {fileID: 8461766406151750334}
   m_Layer: 7
-  m_Name: PP_Sword_1039
-  m_TagString: Player
+  m_Name: CinosSword
+  m_TagString: PlayerSword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

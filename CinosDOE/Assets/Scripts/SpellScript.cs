@@ -27,7 +27,7 @@ public class SpellScript : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag != "Player")
+        if (collision.gameObject.tag != "Player" && collision.gameObject.tag != "PlayerSword")
         {
             if(collide == false)
             {
