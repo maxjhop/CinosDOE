@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2593721533590786508}
   - component: {fileID: 2593721533590786509}
   - component: {fileID: 2593721533590786506}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -112,9 +112,9 @@ GameObject:
   - component: {fileID: 2593721533721930759}
   - component: {fileID: 2593721533721930760}
   - component: {fileID: 2593721533721930762}
-  m_Layer: 0
-  m_Name: NotCinos
-  m_TagString: Untagged
+  m_Layer: 7
+  m_Name: Cinos
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -178,7 +178,6 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 64
-  isGrounded: 0
   wings: {fileID: 0}
   thud: {fileID: 0}
   FlyHeight: 20
@@ -196,16 +195,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 2593721533590786508}
   player: {fileID: 0}
-  Cooldowns: {fileID: 0}
-  ShakePreset: {fileID: 0}
   spell: {fileID: 7969812890285380318, guid: a3cbba17120b2fc4a87ad39c67210f39, type: 3}
-  AOEeffect: {fileID: 0}
   firepoint: {fileID: 2593721534253797918}
   projectileSpeed: 50
   wand: {fileID: 324628837934354624}
   fireRate: 0.75
   burstRate: 5
-  AOERate: 7
   swingRate: 1
 --- !u!1 &2593721533748141739
 GameObject:
@@ -216,7 +211,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2593721533748141738}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GroundCheck
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -251,7 +246,7 @@ GameObject:
   - component: {fileID: 2593721533856952824}
   - component: {fileID: 2593721533856952821}
   - component: {fileID: 2593721533856952820}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -377,7 +372,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2593721534253797918}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Firepoint
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -409,7 +404,7 @@ GameObject:
   - component: {fileID: 2593721534712734074}
   - component: {fileID: 2593721534712734071}
   - component: {fileID: 2593721534712734072}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -491,7 +486,7 @@ GameObject:
   - component: {fileID: 2593721535085575232}
   - component: {fileID: 2593721535085575233}
   - component: {fileID: 2593721535085575234}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WandTip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -585,7 +580,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8866025271969515267}
   - component: {fileID: 2445661045176926357}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: CameraHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -677,10 +672,6 @@ PrefabInstance:
     - target: {fileID: 3734976378501399277, guid: 1d8c0266b522e8040bc969ac78bdd140, type: 3}
       propertyPath: m_Name
       value: CinosSword
-      objectReference: {fileID: 0}
-    - target: {fileID: 3734976378501399277, guid: 1d8c0266b522e8040bc969ac78bdd140, type: 3}
-      propertyPath: m_Layer
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d8c0266b522e8040bc969ac78bdd140, type: 3}
