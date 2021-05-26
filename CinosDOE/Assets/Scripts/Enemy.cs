@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,11 +19,16 @@ public class Enemy : MonoBehaviour
     //colton stuff
     public float MovementRange = 3f;
     public float AttackRange =  3f;
+    public float AttackDamage = 10f;
     private Vector3 moveDirection;
     public Transform playertrans;
     //NavMeshAgent = agent;
 
     public Rigidbody rb;
+
+
+    //dealing damage cooldown
+    bool CanAttack = true;
 
     
     void Awake()
@@ -79,16 +85,36 @@ public class Enemy : MonoBehaviour
         //transform.LookAt(player.transform);
 
         float dist = Vector3.Distance(playertrans.position, transform.position);
+        
         if (dist > MovementRange)
         {
             transform.Translate(0, 0, speed * Time.deltaTime);
         }
+        else
+        {
+            if(CanAttack == true)
+            {
+                StartCoroutine(DealDamage(AttackDamage));
+                Debug.Log("DealthDamage");
+
+            }
+     
+        }
+        
         if (levelOneBoss == null)
         {
             //Debug.Log("BOSS WENT NULL");
             //Debug.Log(this.name);
         }
 
+    }
+  
+    IEnumerator DealDamage(float damage)
+    {
+        CanAttack = false;
+        player.GetComponent<PlayerStats>().TakeDamage(damage);
+        yield return new WaitForSeconds(5.0f);
+        CanAttack = true;
     }
 
     public void TakeDamage(float damage)
