@@ -26,10 +26,12 @@ public class PlayerStats : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        //implement camra shake here
         health -= damage;
         healthBar.SetHealth(health);
         canHeal = false;
         healTime = Time.time + healCooldown;
+        Debug.Log("took damage in pstats");
     }
 
     public void Heal(float heal)

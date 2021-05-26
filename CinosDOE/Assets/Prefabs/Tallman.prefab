@@ -137,7 +137,7 @@ MonoBehaviour:
   AttackRange: 3
   playertrans: {fileID: 0}
   rb: {fileID: 0}
-  spell: {fileID: 7969812890285380318, guid: a3cbba17120b2fc4a87ad39c67210f39, type: 3}
+  spell: {fileID: 2125805241426078267, guid: 499d71aa5fef9934b8bb25b6084bbd47, type: 3}
   projectileSpeed: 30
   firerate: 5
 --- !u!114 &5129615329055503979
@@ -159,6 +159,7 @@ MonoBehaviour:
   rotationSpeed: 2
   MovementRange: 3
   AttackRange: 3
+  AttackDamage: 10
   playertrans: {fileID: 0}
   rb: {fileID: 0}
 --- !u!1 &172048942775942181
