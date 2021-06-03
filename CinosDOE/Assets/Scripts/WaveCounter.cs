@@ -11,10 +11,15 @@ public class WaveCounter : MonoBehaviour
     public bool showingText = false;
     public GameObject shop;
     public int MAX_WAVES = 3;
+    
+    // next level pad info
+    //public bool levelComplete = false;
+    public GameObject nextLevelPad;
 
     // Start is called before the first frame update
     void Start()
     {
+        nextLevelPad.SetActive(false);
         UpdateNum();
     }
 
@@ -32,6 +37,7 @@ public class WaveCounter : MonoBehaviour
             elapsed = Time.time + 4;
             shop.SetActive(true);
             showingText = true;
+            nextLevelPad.SetActive(true);
         }
     }
 
