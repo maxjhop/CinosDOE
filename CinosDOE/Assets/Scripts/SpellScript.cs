@@ -43,8 +43,8 @@ public class SpellScript : MonoBehaviour
                     {
                         enemy.isFrozen = true;
                        
-                        //if(enemyCaster != null)
-                            //enemyCaster.isFrozen = true;
+                        if(enemyCaster != null)
+                            enemyCaster.isFrozen = true;
                         var ice = enemy.transform.GetChild(2).gameObject;
                         ice.SetActive(true);
                         this.GetComponent<Rigidbody>().velocity = new Vector3(0f, 0f, 0f);
@@ -54,7 +54,7 @@ public class SpellScript : MonoBehaviour
                         this.transform.GetChild(1).gameObject.SetActive(false);
                         this.GetComponent<SphereCollider>().enabled = false;
                         this.GetComponent<Rigidbody>().velocity = new Vector3(0f, 0f, 0f);
-                        StartCoroutine(Freeze(enemy, ice));
+                        StartCoroutine(Freeze(enemy, ice, enemyCaster));
                     }
                     else
                     {
@@ -85,13 +85,17 @@ public class SpellScript : MonoBehaviour
         }
     }
 
-    IEnumerator Freeze(Enemy enemy, GameObject ice)
+    IEnumerator Freeze(Enemy enemy, GameObject ice, EnemyCaster enemyCaster)
     {
         Debug.Log("INSIDE FREEZE");
         yield return new WaitForSeconds(3.0f);
         Debug.Log("AFTER WAIT");
         ice.SetActive(false);
         enemy.isFrozen = false;
+        if (enemyCaster != null)
+        {
+            enemyCaster.isFrozen = false;
+        }
         Destroy(gameObject);
 
     }

@@ -35,7 +35,10 @@ public class EnemySpellScript : MonoBehaviour
         if (collision.gameObject != this)
         {
             create_explosion();
-            pstats.TakeDamage(SpellDamage);
+            if (collision.gameObject == player)
+            {
+                pstats.TakeDamage(SpellDamage);
+            }
             Debug.Log("Called Take damage");
 
         }

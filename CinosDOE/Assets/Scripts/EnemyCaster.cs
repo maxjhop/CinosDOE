@@ -74,7 +74,7 @@ public class EnemyCaster : MonoBehaviour
 
             }
         }
-        
+        /*
         if (Time.time > nextMove)
         {
             nextMove = Time.time + nextMove;
