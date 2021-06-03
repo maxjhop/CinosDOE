@@ -33,9 +33,9 @@ public class EnemyCaster : MonoBehaviour
     public float firerate = 5f;
     private float nextfire = 5f;
     private float nextMove = 5f;
-    //private float moveTime = 1f;
+    private float moveTime = 1f;
     private bool canMove = false;
-    //private bool isMoving = false;
+    private bool isMoving = false;
 
 
     void Start()
@@ -49,7 +49,7 @@ public class EnemyCaster : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*
+        
         if (!isFrozen)
         {
             Vector3 direction = playertrans.position - this.transform.position;
@@ -88,7 +88,7 @@ public class EnemyCaster : MonoBehaviour
             canMove = false;
             isMoving = false;
         }
-        */
+        
     }
 
 

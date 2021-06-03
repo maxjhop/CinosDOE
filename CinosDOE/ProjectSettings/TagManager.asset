@@ -9,6 +9,7 @@ TagManager:
   - PlayerSword
   - Freeze
   - Ice
+  - NextLevel
   layers:
   - Default
   - TransparentFX
