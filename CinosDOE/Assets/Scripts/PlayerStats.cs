@@ -10,7 +10,7 @@ public class PlayerStats : MonoBehaviour
     public float mana;
     public float maxMana = 200;
     public float regenCooldown = 3;
-    public float healCooldown = 5;
+    public float healCooldown = 3;
     private float regenTime = 0;
     private float healTime = 0;
     public bool canRegenMana = true;
@@ -79,12 +79,12 @@ public class PlayerStats : MonoBehaviour
 
         if (canRegenMana) 
         {
-            RegenMana(.1f);
+            RegenMana(.15f);
         }
 
         if (canHeal)
         {
-            Heal(0.1f);
+            Heal(0.15f);
         }
         /*
         if (Input.GetKeyDown("q"))
