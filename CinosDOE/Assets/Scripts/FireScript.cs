@@ -17,6 +17,7 @@ public class FireScript : MonoBehaviour
     private PlayerStats playerStats;
     private PlayerController playerController;
     public GameObject spell;
+    public GameObject freeze;
     public GameObject AOEeffect;
     public Transform firepoint;
     public float projectileSpeed = 30;
@@ -27,19 +28,23 @@ public class FireScript : MonoBehaviour
     public float fireRate = 0.1f;
     public float burstRate = 5.0f;
     public float AOERate = 7.0f;
+    public float freezeCooldown = 7.0f;
     public float swingRate;
     private float nextFire = 0.0f;
     private float nextBurst = 0.0f;
     private float nextSwing = 0.0f;
     private float nextAOE = 0.0f;
+    private float nextFreeze = 0.0f;
     private float movementCooldown = 0.0f;
     private float explosionTime = 0.0f;
     private float explCooldown = 0f;
     private bool inAOE = false;
     private Text burstText;
     private Text AOEText;
+    private Text FreezeText;
     private bool burstTextSelected = false;
     private bool aoeTextSelected = false;
+    private bool freezeTextSelected = false;
     
 
    
@@ -89,9 +94,13 @@ public class FireScript : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, 8))
         {
-            if(hit.collider.tag == "Enemy")
+            if(hit.collider.tag == "Enemy" || hit.collider.transform.parent.gameObject.tag == "Enemy")
             {
                 Enemy enemy = hit.collider.gameObject.transform.GetComponent<Enemy>();
+                if(enemy == null)
+                {
+                    enemy = hit.collider.transform.parent.GetComponent<Enemy>();
+                }
                 enemy.TakeDamage(50);
                 Vector3 dir = firepoint.position - enemy.transform.position;
                 dir.Normalize();
@@ -100,6 +109,24 @@ public class FireScript : MonoBehaviour
                 enemy.GetComponent<Rigidbody>().AddForce((dir)* 500000);
             }
         }
+    }
+
+    void FreezeAbility()
+    {
+        whoosh.Play();
+
+        Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit))
+            destination = hit.point;
+        else
+            destination = ray.GetPoint(1000);
+
+        otherAnimator.SetTrigger("Fire");
+        var projectileObj = Instantiate(freeze, firepoint.position, Quaternion.identity) as GameObject;
+        projectileObj.GetComponent<Rigidbody>().velocity = (destination - firepoint.position).normalized * projectileSpeed;
+
     }
 
     public IEnumerator Burst()
@@ -193,7 +220,7 @@ public class FireScript : MonoBehaviour
                     if (collider.tag == "Enemy")
                     {
                         Enemy enemy = collider.gameObject.transform.GetComponent<Enemy>();
-                        enemy.TakeDamage(25);
+                        enemy.TakeDamage(50);
                         Vector3 dir = firepoint.position - enemy.transform.position;
                         dir.Normalize();
                         dir.x = dir.x * -2;
@@ -266,7 +293,45 @@ public class FireScript : MonoBehaviour
 
             }
         }
+
+        if (nextFreeze - Time.time > 0)
+        {
+            if (!freezeTextSelected)
+            {
+                foreach (Transform child in Cooldowns.transform)
+                {
+
+                    if (child.GetComponent<Text>().text == "")
+                    {
+                        FreezeText = child.GetComponent<Text>();
+                        freezeTextSelected = true;
+                        break;
+                    }
+
+                }
+            }
+            float freezeCD = (nextFreeze - Time.time);
+            FreezeText.text = "Freeze cooldown: " + Math.Round(freezeCD, 2).ToString();
+            if (freezeCD <= 0.1)
+            {
+                FreezeText.text = "";
+                freezeTextSelected = false;
+
+            }
+        }
         //end of cooldown displays
 
+        if (Input.GetKeyDown("r") && AbilityTracker.Instance.HasAbility("Freeze") && Time.time > nextFreeze)
+        {
+            if (playerStats.mana >= 20)
+            {
+                FreezeAbility();
+                nextFreeze = Time.time + freezeCooldown;
+                playerStats.SpendMana(20);
+            }
+
+        }
+
     }
+
 }

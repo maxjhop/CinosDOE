@@ -15,6 +15,7 @@ public class ManaBar : MonoBehaviour
     public void SetMax(float mana)
     {
         slider.maxValue = mana;
+        Debug.Log("slider: " + slider.maxValue.ToString());
         slider.value = mana;
     }
 }

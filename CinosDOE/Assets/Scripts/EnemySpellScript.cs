@@ -32,7 +32,7 @@ public class EnemySpellScript : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject != this)
         {
             create_explosion();
             pstats.TakeDamage(SpellDamage);

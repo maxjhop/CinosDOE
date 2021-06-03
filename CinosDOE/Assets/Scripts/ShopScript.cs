@@ -12,6 +12,7 @@ public class ShopScript : MonoBehaviour
     public TMP_Text ExperienceAvailable;
     public Button BurstSpellBuyButton;
     public Button AOESpellBuyButton;
+    public Button FreezeSpellBuyButton;
     public Text EnterShop;
     public bool inProx = false;
     public bool inShop = false;
@@ -119,18 +120,35 @@ public class ShopScript : MonoBehaviour
 
     public void AOESpellUnlock()
     {
-        if (experience < 100)
+        if (experience < 300)
             Debug.Log("Not enough experience for AOE");
         else
         {
             AOESpellBuyButton.interactable = false;
             TMP_Text buttonText = AOESpellBuyButton.transform.GetChild(1).GetComponent<TMP_Text>();
             buttonText.text = "Purchased!";
-            ExpManager.Instance.SubExperience(100);
+            ExpManager.Instance.SubExperience(300);
             experience = ExpManager.Instance.GetExperience();
             ExperienceAvailable.text = "Total Experience: " + experience.ToString();
 
             AbilityTracker.Instance.AddAbility("AOE");
+        }
+    }
+
+    public void FreezeSpellUnlock()
+    {
+        if (experience < 100)
+            Debug.Log("Not enough experience for freeze");
+        else
+        {
+            FreezeSpellBuyButton.interactable = false;
+            TMP_Text buttonText = FreezeSpellBuyButton.transform.GetChild(1).GetComponent<TMP_Text>();
+            buttonText.text = "Purchased!";
+            ExpManager.Instance.SubExperience(100);
+            experience = ExpManager.Instance.GetExperience();
+            ExperienceAvailable.text = "Total Experience: " + experience.ToString();
+
+            AbilityTracker.Instance.AddAbility("Freeze");
         }
     }
 }

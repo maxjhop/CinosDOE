@@ -15,6 +15,8 @@ public class Enemy : MonoBehaviour
     public float EnemyHealth = 100f;
     public float Damage = 50f;
     public float rotationSpeed = 2f;
+    public GameObject explode;
+    public bool isFrozen = false;
 
     //colton stuff
     public float MovementRange = 3f;
@@ -74,31 +76,33 @@ public class Enemy : MonoBehaviour
 
         //moveDirection = Vector3.zero;
 
-        
-        Vector3 direction = playertrans.position - this.transform.position;
-        direction.y = 0;
-
-        this.transform.rotation = Quaternion.Slerp(this.transform.rotation,
-                                    Quaternion.LookRotation(direction), 0.3f);
-        //moveDirection = direction.normalized;
-
-        //transform.LookAt(player.transform);
-
-        float dist = Vector3.Distance(playertrans.position, transform.position);
-        
-        if (dist > MovementRange)
+        if (!isFrozen)
         {
-            transform.Translate(0, 0, speed * Time.deltaTime);
-        }
-        else
-        {
-            if(CanAttack == true)
+            Vector3 direction = playertrans.position - this.transform.position;
+            direction.y = 0;
+
+            this.transform.rotation = Quaternion.Slerp(this.transform.rotation,
+                                        Quaternion.LookRotation(direction), 0.3f);
+            //moveDirection = direction.normalized;
+
+            //transform.LookAt(player.transform);
+
+            float dist = Vector3.Distance(playertrans.position, transform.position);
+
+            if (dist > MovementRange)
             {
-                StartCoroutine(DealDamage(AttackDamage));
-                Debug.Log("DealthDamage");
+                transform.Translate(0, 0, speed * Time.deltaTime);
+            }
+            else
+            {
+                if (CanAttack == true)
+                {
+                    StartCoroutine(DealDamage(AttackDamage));
+                    Debug.Log("DealthDamage");
+
+                }
 
             }
-     
         }
         
         if (levelOneBoss == null)
@@ -143,9 +147,10 @@ public class Enemy : MonoBehaviour
             //levelOneBoss.SetActive(true);
         }
         Debug.Log("DESTROYING ENEMY!");
-        
+        var projectileObj = Instantiate(explode, this.transform.position, Quaternion.identity) as GameObject;
         Destroy(gameObject);
         ExpManager.Instance.AddExperience(experienceDrop);
+        Destroy(projectileObj, 5);
 
         //ExpManager.onNotify(player, 1);
         //AddExperience(experienceDrop);

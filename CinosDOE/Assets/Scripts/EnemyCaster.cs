@@ -14,6 +14,7 @@ public class EnemyCaster : MonoBehaviour
     public float EnemyHealth = 100f;
     public float Damage = 50f;
     public float rotationSpeed = 2f;
+    public bool isFrozen = false;
 
     //colton stuff
     public float MovementRange = 3f;
@@ -48,29 +49,32 @@ public class EnemyCaster : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        Vector3 direction = playertrans.position - this.transform.position;
-        direction.y = 0;
-        //transform.LookAt(playertrans.position);
-        this.transform.rotation = Quaternion.Slerp(this.transform.rotation,
-                                  Quaternion.LookRotation(direction), 0.3f);
-        // moveDirection = direction.normalized;
-
-        //transform.LookAt(player.transform);
-
-        float dist = Vector3.Distance(playertrans.position, transform.position);
-        if (dist > MovementRange && canMove)
-        {
-            transform.Translate(0, 0, speed * Time.deltaTime);
-        }
-
-        if (Time.time > nextfire)
-        {
-            nextfire = Time.time + firerate;
-            shoot();
-
-        }
         /*
+        if (!isFrozen)
+        {
+            Vector3 direction = playertrans.position - this.transform.position;
+            direction.y = 0;
+            //transform.LookAt(playertrans.position);
+            this.transform.rotation = Quaternion.Slerp(this.transform.rotation,
+                                      Quaternion.LookRotation(direction), 0.3f);
+            // moveDirection = direction.normalized;
+
+            //transform.LookAt(player.transform);
+
+            float dist = Vector3.Distance(playertrans.position, transform.position);
+            if (dist > MovementRange && canMove)
+            {
+                transform.Translate(0, 0, speed * Time.deltaTime);
+            }
+
+            if (Time.time > nextfire)
+            {
+                nextfire = Time.time + firerate;
+                shoot();
+
+            }
+        }
+        
         if (Time.time > nextMove)
         {
             nextMove = Time.time + nextMove;
@@ -99,6 +103,7 @@ public class EnemyCaster : MonoBehaviour
         var projectileObj = Instantiate(spell, (this.transform.position + (transform.forward * 2) + addition), Quaternion.identity) as GameObject;
         //otherAnimator.SetTrigger("Fire");
         projectileObj.GetComponent<Rigidbody>().velocity = (transform.forward).normalized * projectileSpeed;
+        Destroy(projectileObj, 8);
     }
 
     public void TakeDamage(float damage)

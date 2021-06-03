@@ -8,7 +8,7 @@ public class PlayerStats : MonoBehaviour
     public float health;
     public float maxHealth = 100;
     public float mana;
-    public float maxMana = 100;
+    public float maxMana = 200;
     public float regenCooldown = 3;
     public float healCooldown = 5;
     private float regenTime = 0;
@@ -21,6 +21,9 @@ public class PlayerStats : MonoBehaviour
     void Start()
     {
         health = maxHealth;
+        healthBar.SetMax(maxHealth);
+        manaBar.SetMax(maxMana);
+        Debug.Log("Max mana: " + maxMana.ToString());
         mana = maxMana;
     }
 
