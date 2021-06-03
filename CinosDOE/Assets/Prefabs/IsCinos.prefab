@@ -261,7 +261,7 @@ MonoBehaviour:
   Cooldowns: {fileID: 7985695833333548928}
   ShakePreset: {fileID: 11400000, guid: 39b85346e4df57547b8f08bf881d4021, type: 2}
   spell: {fileID: 7969812890285380318, guid: a3cbba17120b2fc4a87ad39c67210f39, type: 3}
-  freeze: {fileID: 0}
+  freeze: {fileID: 8286889335657778011, guid: 9a891511ccdee3b48888ab66d1b2718f, type: 3}
   AOEeffect: {fileID: 1071518978498482736, guid: 28b4dea2e7a462245b4dab3307495447, type: 3}
   firepoint: {fileID: 4462652736603283949}
   projectileSpeed: 70
