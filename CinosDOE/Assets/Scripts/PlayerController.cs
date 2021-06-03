@@ -4,6 +4,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class PlayerController : MonoBehaviour
 {
     public CharacterController characterController;
@@ -158,6 +159,25 @@ public class PlayerController : MonoBehaviour
 
         FlyAbility();
         
-       
     }
+    /*
+    void OnCollisionEnter (Collision col)
+    {
+        Debug.Log("Collided with nextLevelPad!");
+        if (col.collider.tag == "NextLevel")
+        {
+            //Debug.Log("Collided with nextLevelPad!");
+            SceneManager.LoadScene("LevelTwo");
+        }
+    }
+    */
+    /*
+    void onTriggerEnter(Collider other)
+    {
+        if (other.transform.tag == "NextLevel")
+        {
+            SceneManager.LoadScene("LevelTwo");
+        }
+    }
+    */
 }
