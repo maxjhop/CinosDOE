@@ -63,11 +63,8 @@ public class SpellScript : MonoBehaviour
                     Debug.Log("Enemy hit");
   
                 }
-<<<<<<< Updated upstream
+
                 if (collision.gameObject.name == "Boss")
-=======
-                else if (collision.gameObject.name == "LevelOneBoss")
->>>>>>> Stashed changes
                 {
                     create_explosion();
                     Debug.Log("Boss hit");
