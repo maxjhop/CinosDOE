@@ -18,6 +18,7 @@ public class NextLevel : MonoBehaviour
         if (nextLevelPad.activeSelf)
         {
             Debug.Log("Going to next level");
+
         }
     }
 }
