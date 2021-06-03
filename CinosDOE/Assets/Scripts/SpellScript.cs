@@ -58,21 +58,25 @@ public class SpellScript : MonoBehaviour
                     }
                     else
                     {
+                        Debug.Log("First call");
                         create_explosion();
                     }
                     Debug.Log("Enemy hit");
   
                 }
 
-                if (collision.gameObject.name == "Boss")
+                else if (collision.gameObject.name == "Boss")
                 {
+                    Debug.Log("Second Call");
                     create_explosion();
                     Debug.Log("Boss hit");
                     BossScript boss = collision.gameObject.transform.GetComponent<BossScript>();
                     boss.TakeDamage(SpellDamage);
                 }
+                
                 else
                 {
+                    Debug.Log("Third call");
                     create_explosion();
                 }
                 
@@ -83,7 +87,9 @@ public class SpellScript : MonoBehaviour
 
     IEnumerator Freeze(Enemy enemy, GameObject ice)
     {
+        Debug.Log("INSIDE FREEZE");
         yield return new WaitForSeconds(3.0f);
+        Debug.Log("AFTER WAIT");
         ice.SetActive(false);
         enemy.isFrozen = false;
         Destroy(gameObject);
@@ -92,6 +98,7 @@ public class SpellScript : MonoBehaviour
 
     void create_explosion()
     {
+        Debug.Log("Inside create explosion");
         collide = true;
         //explosion.Play();
         var projectileObj = Instantiate(explode, spell.position, Quaternion.identity) as GameObject;
