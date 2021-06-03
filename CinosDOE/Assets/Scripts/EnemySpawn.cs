@@ -19,6 +19,13 @@ public class EnemySpawn : MonoBehaviour
     // might want to change number of enemies per wave
     // could have predetermined constants for each wave size
 
+    // wave intermission info
+    private bool waveOneDone = false;
+    private bool firstTimeSet = true;
+    public float waveIntermissionTime = 10f;  // set to 30-60 seconds for final
+    private float waveEndTime = 0f;
+    public GameObject shop;
+
     // enemy info
     public GameObject enemy; // the prefab
     private GameObject enemyInstance; // prefab instance
@@ -78,6 +85,23 @@ public class EnemySpawn : MonoBehaviour
             // totalEnemies += 1;
             //Debug.Log("Spawning Enemy!");
         }
+        /*
+        if (!waveOneDone)
+        {
+            Debug.Log(Time.time);
+            Debug.Log("starting wave 1!!\n");
+            WaveSpawn();
+        }
+        else {
+            float diff = Time.time - waveEndTime;
+            //Debug.Log("diff:\n");
+            //Debug.Log(diff);
+            if (diff >= waveIntermissionTime)
+            {
+                WaveSpawn();
+            }
+        }
+        */
         WaveSpawn();
     }
 
@@ -105,21 +129,46 @@ public class EnemySpawn : MonoBehaviour
 
     void WaveSpawn()
     {
+        
+        //waveOneDone = true;
+        //waveStartTime = Time.time;
+        //Debug.Log("Starting time:\n");
+        //Debug.Log(waveEndTime);
+        
         if (totalEnemies >= MAX_ENEMIES)
         {
             if (curEnemies == 0)
             {
-                totalEnemies = 0;
-                waveNum += 1;
-                /*
-                if(textUI != null)
+                if (firstTimeSet)
                 {
-                    //Debug.Log(textUI);
-                    //textUI.GetComponent<WaveCounter>().UpdateNum();
-                    //textUI.UpdateNum();
+                    shop.SetActive(true);
+                    Debug.Log("this is a fukn test");
+                    waveEndTime = Time.time;
+                    //Debug.Log(waveEndTime);
+                    //Debug.Log(Time.time);
+                    firstTimeSet = false;
                 }
-                */
-                waveCounterScript.UpdateNum();
+                float diff = Time.time - waveEndTime;
+                //Debug.Log(diff);
+                //Debug.Log(waveIntermissionTime);
+                if (diff >= waveIntermissionTime)
+                {
+                    shop.SetActive(false);
+                    firstTimeSet = true;
+                    // waveEndTime = Time.time;
+                    //Debug.Log(waveEndTime);
+                    totalEnemies = 0;
+                    waveNum += 1;
+                    /*
+                    if(textUI != null)
+                    {
+                        //Debug.Log(textUI);
+                        //textUI.GetComponent<WaveCounter>().UpdateNum();
+                        //textUI.UpdateNum();
+                    }
+                    */
+                    waveCounterScript.UpdateNum();
+                }
             }
         }
     }
