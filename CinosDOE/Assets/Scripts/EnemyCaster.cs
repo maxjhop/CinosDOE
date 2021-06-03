@@ -49,7 +49,7 @@ public class EnemyCaster : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
         if (!isFrozen)
         {
             Vector3 direction = playertrans.position - this.transform.position;
@@ -88,9 +88,10 @@ public class EnemyCaster : MonoBehaviour
             canMove = false;
             isMoving = false;
         }
+        */
         
     }
-
+        
 
     public void shoot()
     {
