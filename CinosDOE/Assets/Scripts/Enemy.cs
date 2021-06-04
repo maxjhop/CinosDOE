@@ -32,6 +32,9 @@ public class Enemy : MonoBehaviour
     //dealing damage cooldown
     bool CanAttack = true;
 
+    // for level 3 boss
+    private bool lastBossDead = false;
+
     
     void Awake()
     {
@@ -153,6 +156,10 @@ public class Enemy : MonoBehaviour
             }
             
             //levelOneBoss.SetActive(true);
+        }
+        if (this.name == "BiggerFlying")
+        {
+            lastBossDead = true;
         }
         Debug.Log("DESTROYING ENEMY!");
         var projectileObj = Instantiate(explode, this.transform.position, Quaternion.identity) as GameObject;

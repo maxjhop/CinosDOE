@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4297991, g: 0.46410263, b: 0.4341426, a: 1}
+  m_IndirectSpecularColor: {r: 0.4298, g: 0.4641031, b: 0.43414262, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -239,7 +239,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1864750171700806809, guid: 0744565188f39794b83025331ce48614, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1864750171700806811, guid: 0744565188f39794b83025331ce48614, type: 3}
       propertyPath: EXP
@@ -5757,13 +5757,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a56229b7a7b3164797b3414ca8426d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MAX_ENEMIES: 10
+  MAX_ENEMIES: 1
   MAX_WAVES: 5
-  waveIntermissionTime: 45
+  waveIntermissionTime: 3
   shop: {fileID: 582104775}
   enemy: {fileID: 8944273479363917776, guid: 17ca80960bae2f540b79bff699772dd6, type: 3}
   enemy2: {fileID: 8944273479363917776, guid: 17ca80960bae2f540b79bff699772dd6, type: 3}
-  boss: {fileID: 0}
+  boss: {fileID: 4350678870902274634, guid: db4c671393616ed40809432f552e1607, type: 3}
   waveString: {fileID: 1715674749}
 --- !u!1001 &1220554583
 PrefabInstance:
