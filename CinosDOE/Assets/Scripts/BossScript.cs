@@ -100,7 +100,7 @@ public class BossScript : MonoBehaviour
                  shoot_Black();
              }
              */
-            shoot_Red();
+            shoot_Black();
            
             nextfire = Time.time + firerate;
         }
