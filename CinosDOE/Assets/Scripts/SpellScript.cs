@@ -65,7 +65,7 @@ public class SpellScript : MonoBehaviour
   
                 }
 
-                else if (collision.gameObject.name == "Boss")
+                else if (collision.gameObject.tag == "Boss")
                 {
                     Debug.Log("Second Call");
                     create_explosion();

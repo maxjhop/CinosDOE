@@ -55,7 +55,7 @@ public class BossScript : MonoBehaviour
     void Update()
     {
         // check for number of enemies (boss spawns when all enemies are dead)
-        numEnemies = GameObject.FindGameObjectsWithTag("Enemy").Length;
+       
 
         //moveDirection = Vector3.zero;
 
