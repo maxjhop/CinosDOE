@@ -33,7 +33,11 @@ public class EnemySpawn : MonoBehaviour
     // enemy2 info
     public GameObject enemy2;
     private GameObject enemy2Instance;
-    
+
+    // boss info
+    public GameObject boss;
+    private bool alreadySpawned = false;
+
     private int curEnemies;
 
     // wave UI text info
@@ -74,6 +78,13 @@ public class EnemySpawn : MonoBehaviour
         // spawn boss
         // <end pseudocode>
         curEnemies = GameObject.FindGameObjectsWithTag("Enemy").Length;
+        
+        // spawn boss
+        if (waveNum == MAX_WAVES && !alreadySpawned)
+        {
+            GameObject newBoss = Instantiate(boss.gameObject, new Vector3(0, 2, 0), Quaternion.identity) as GameObject;
+            alreadySpawned = true;
+        }
 
         if (Time.time > intervalTime && totalEnemies < MAX_ENEMIES && waveNum < MAX_WAVES)
         {
