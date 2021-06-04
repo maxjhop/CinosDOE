@@ -111,6 +111,7 @@ public class PlayerController : MonoBehaviour
     
     void Update()
     {
+        //TimerScript.Instance.UpdateTime();
         
         isGrounded = Physics.CheckSphere(groundCheck.position, distToGround, groundMask);
         // player movement - forward, backward, left, right
