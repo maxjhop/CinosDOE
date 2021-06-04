@@ -1426,6 +1426,7 @@ GameObject:
   - component: {fileID: 8133809370094633102}
   - component: {fileID: 8133809370094633089}
   - component: {fileID: 7579117685420409712}
+  - component: {fileID: -252826753976641794}
   m_Layer: 0
   m_Name: flyingTej
   m_TagString: Enemy
@@ -1486,12 +1487,36 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8944273479363917776}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d8cbb761739dc2489bd2d64f137ebd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 4462652736433521407, guid: 6eec36ff958dc7244af65205dc4e2468, type: 3}
+  speed: 5
+  EnemyHealth: 100
+  Damage: 50
+  rotationSpeed: 2
+  explode: {fileID: 6386621501399501692, guid: 3a07dae1e14909549ba11df7b963809c, type: 3}
+  isFrozen: 0
+  MovementRange: 3
+  AttackRange: 3
+  AttackDamage: 10
+  playertrans: {fileID: 0}
+  rb: {fileID: 0}
+--- !u!114 &-252826753976641794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8944273479363917776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b1002eed6371014196a2caef12bba25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 4462652736433521407, guid: 6eec36ff958dc7244af65205dc4e2468, type: 3}
   speed: 5
   EnemyHealth: 100
   Damage: 50
