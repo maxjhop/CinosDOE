@@ -93,7 +93,7 @@ public class EnemySpawn : MonoBehaviour
             }
             else if (SceneManager.GetActiveScene().name == "LevelThree")
             {
-                GameObject newBoss = Instantiate(boss.gameObject, new Vector3(0, 2, 0), Quaternion.identity) as GameObject;
+                GameObject newBoss = Instantiate(boss.gameObject, new Vector3(-20, 80, -10), Quaternion.identity) as GameObject;
             }
             alreadySpawned = true;
         }
