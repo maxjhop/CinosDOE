@@ -201,6 +201,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 6e253dc59c001e44ab9d35ee01215549, type: 3}
   m_PrefabInstance: {fileID: 51295460}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &71209525 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3250641439457158566, guid: a56e3d49359684d4ab6f88aff106b307, type: 3}
+  m_PrefabInstance: {fileID: 2040879508}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 790310c5d901d6147866c238609f4f0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &71209528 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3250641439457158565, guid: a56e3d49359684d4ab6f88aff106b307, type: 3}
@@ -490,6 +501,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1103836270898350000, guid: 6eec36ff958dc7244af65205dc4e2468, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1103836270898350000, guid: 6eec36ff958dc7244af65205dc4e2468, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4462652736433521407, guid: 6eec36ff958dc7244af65205dc4e2468, type: 3}
       propertyPath: m_Name
       value: IsCinos
@@ -566,6 +585,14 @@ PrefabInstance:
       propertyPath: shop
       value: 
       objectReference: {fileID: 582104775}
+    - target: {fileID: 4462652738094822841, guid: 6eec36ff958dc7244af65205dc4e2468, type: 3}
+      propertyPath: winscreen
+      value: 
+      objectReference: {fileID: 1273024597}
+    - target: {fileID: 4462652738094822841, guid: 6eec36ff958dc7244af65205dc4e2468, type: 3}
+      propertyPath: gameplayui
+      value: 
+      objectReference: {fileID: 1715674749}
     - target: {fileID: 4462652738094822841, guid: 6eec36ff958dc7244af65205dc4e2468, type: 3}
       propertyPath: nextLevelPad
       value: 
@@ -11710,6 +11737,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1273024601}
     m_Modifications:
+    - target: {fileID: 3250641439251208696, guid: a56e3d49359684d4ab6f88aff106b307, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 71209525}
+    - target: {fileID: 3250641439251208696, guid: a56e3d49359684d4ab6f88aff106b307, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: mainmenubutton
+      objectReference: {fileID: 0}
     - target: {fileID: 3250641439251208697, guid: a56e3d49359684d4ab6f88aff106b307, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -144
