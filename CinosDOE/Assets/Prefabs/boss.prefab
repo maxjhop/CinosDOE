@@ -1369,7 +1369,7 @@ MonoBehaviour:
   playertrans: {fileID: 0}
   rb: {fileID: 0}
   spell_one: {fileID: 2273101108510020613, guid: adee4fe48ffba5e40ab2c0a6ed6d8c26, type: 3}
-  spell_two: {fileID: 2125805241426078267, guid: 499d71aa5fef9934b8bb25b6084bbd47, type: 3}
+  spell_two: {fileID: 1122217340944526632, guid: 2e4942ac9f84b8d46acca68f4b65426d, type: 3}
   projectileSpeed: 30
   firerate: 5
 --- !u!1 &8866780869622764443
