@@ -10,6 +10,7 @@ TagManager:
   - Freeze
   - Ice
   - NextLevel
+  - Boss
   layers:
   - Default
   - TransparentFX
