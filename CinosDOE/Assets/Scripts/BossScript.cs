@@ -88,19 +88,20 @@ public class BossScript : MonoBehaviour
 
         if (Time.time > nextfire)
         {
-            /* uncommit later
-            shoot_color = Random.Range(0, 2);
-            if (shoot_color == 0)
-            {
-             
-                shoot_Red();
-            }
-            else
-            {
-                shoot_Black();
-            }
-            */
+            /*
+             shoot_color = Random.Range(0, 2);
+             if (shoot_color == 0)
+             {
+
+                 shoot_Red();
+             }
+             else
+             {
+                 shoot_Black();
+             }
+             */
             shoot_Red();
+           
             nextfire = Time.time + firerate;
         }
 
@@ -129,15 +130,21 @@ public class BossScript : MonoBehaviour
 
     public void shoot_Black()
     {
-
+       
         Vector3 addition;
         addition.x = 0;
         addition.z = 0;
         addition.y = 4;
 
-        var projectileObj = Instantiate(spell_two, (this.transform.position + (transform.forward * 2) + addition), Quaternion.identity) as GameObject;
-        //otherAnimator.SetTrigger("Fire");
-        projectileObj.GetComponent<Rigidbody>().velocity = (transform.forward).normalized * projectileSpeed;
+        var projectileObj_N = Instantiate(spell_two, (this.transform.position + (transform.forward * 2) + addition), Quaternion.identity) as GameObject;
+        projectileObj_N.GetComponent<Rigidbody>().velocity = (transform.forward).normalized * projectileSpeed;
+
+        var projectileObj_E = Instantiate(spell_two, (this.transform.position + (transform.right * 2) + addition), Quaternion.identity) as GameObject;
+        projectileObj_E.GetComponent<Rigidbody>().velocity = (transform.right).normalized * projectileSpeed;
+
+        var projectileObj_W = Instantiate(spell_two, (this.transform.position + (transform.forward * 2) + addition), Quaternion.identity) as GameObject;
+        projectileObj_W.GetComponent<Rigidbody>().velocity = (-transform.right).normalized * projectileSpeed;
+
     }
 
 
@@ -163,20 +170,7 @@ public class BossScript : MonoBehaviour
 
     void EnemyDead()
     {
-        // if last enemy is about to die, spawn boss
-        if (numEnemies == 1)
-        {
-            Debug.Log("Last enemy has been killed");
-            //Debug.Log(levelOneBoss);
-
-            if (levelOneBoss != null)
-            {
-                //Debug.Log("Setting Boss to active");
-                levelOneBoss.SetActive(true);
-            }
-
-            //levelOneBoss.SetActive(true);
-        }
+        
         Debug.Log("DESTROYING ENEMY!");
 
         Destroy(gameObject);
@@ -187,6 +181,7 @@ public class BossScript : MonoBehaviour
 
 
     }
+
 
 
 

@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
+//using System.Security.Policy;
 using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
@@ -18,6 +20,7 @@ public class PlayerStats : MonoBehaviour
     public HealthBar healthBar;
     public ManaBar manaBar;
 
+    public Deathmenu deathscreen;
     void Start()
     {
         health = maxHealth;
@@ -25,16 +28,26 @@ public class PlayerStats : MonoBehaviour
         manaBar.SetMax(maxMana);
         Debug.Log("Max mana: " + maxMana.ToString());
         mana = maxMana;
+
     }
 
     public void TakeDamage(float damage)
     {
         //implement camra shake here
+        
         health -= damage;
         healthBar.SetHealth(health);
+        
         canHeal = false;
         healTime = Time.time + healCooldown;
         Debug.Log("took damage in pstats");
+        
+        if(health <= 0)
+        {
+            deathscreen.opendeath();
+            Debug.Log("CINOS IS DEAD");
+        }
+        
     }
 
     public void Heal(float heal)

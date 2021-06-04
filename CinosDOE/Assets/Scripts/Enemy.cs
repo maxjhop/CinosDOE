@@ -117,7 +117,7 @@ public class Enemy : MonoBehaviour
     {
         CanAttack = false;
         player.GetComponent<PlayerStats>().TakeDamage(damage);
-        yield return new WaitForSeconds(5.0f);
+        yield return new WaitForSeconds(2.0f);
         CanAttack = true;
     }
 
