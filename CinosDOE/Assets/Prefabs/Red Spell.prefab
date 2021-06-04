@@ -4882,7 +4882,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   explode: {fileID: 9194087271261165970, guid: 508c2379d13e54d4b8c6895a1cfbc498, type: 3}
   spell: {fileID: 6852589418918401364}
   SpellDamage: 20

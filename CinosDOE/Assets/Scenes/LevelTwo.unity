@@ -4283,6 +4283,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Managers (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1864750171700806809, guid: 0744565188f39794b83025331ce48614, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1864750171700806811, guid: 0744565188f39794b83025331ce48614, type: 3}
       propertyPath: EXP
       value: 

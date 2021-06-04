@@ -12,6 +12,7 @@ public class AbilityTracker : MonoBehaviour
 
     private void Awake()
     {
+        DontDestroyOnLoad(transform.gameObject);
         Instance = this;
         Debug.Log("Instance");
     }
