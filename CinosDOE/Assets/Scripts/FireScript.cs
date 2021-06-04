@@ -321,6 +321,8 @@ public class FireScript : MonoBehaviour
         }
         //end of cooldown displays
 
+        //if (Input.GetKeyDown("r") && AbilityTracker.Instance.HasAbility("Freeze") && Time.time > nextFreeze)
+        //if (Input.GetKeyDown("r") && Time.time > nextFreeze)
         if (Input.GetKeyDown("r") && AbilityTracker.Instance.HasAbility("Freeze") && Time.time > nextFreeze)
         {
             if (playerStats.mana >= 20)
