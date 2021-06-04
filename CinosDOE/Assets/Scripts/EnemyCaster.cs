@@ -54,6 +54,7 @@ public class EnemyCaster : MonoBehaviour
         {
             Vector3 direction = playertrans.position - this.transform.position;
             direction.y = 0;
+
             //transform.LookAt(playertrans.position);
             this.transform.rotation = Quaternion.Slerp(this.transform.rotation,
                                       Quaternion.LookRotation(direction), 0.3f);

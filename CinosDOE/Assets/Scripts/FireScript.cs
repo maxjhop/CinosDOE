@@ -94,7 +94,7 @@ public class FireScript : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, 8))
         {
-            if(hit.collider.tag == "Enemy" || hit.collider.transform.parent.gameObject.tag == "Enemy")
+            if(hit.collider.tag == "Enemy" || hit.collider.transform.parent.gameObject.tag == "Enemy" )
             {
                 Enemy enemy = hit.collider.gameObject.transform.GetComponent<Enemy>();
                 if(enemy == null)
