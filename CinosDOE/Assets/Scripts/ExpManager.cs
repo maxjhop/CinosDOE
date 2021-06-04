@@ -7,11 +7,12 @@ public class ExpManager : MonoBehaviour
 {
     public static ExpManager Instance { get; private set; }
 
-    private float experience = 400;
+    private float experience = 0;
     public Text EXP;
 
     private void Awake()
     {
+        DontDestroyOnLoad(transform.gameObject);
         Instance = this;
         EXP.text = "Experience: " + experience.ToString();
     }
