@@ -23,7 +23,7 @@ public class NextLevel : MonoBehaviour
         {
             if (SceneManager.GetActiveScene().name == "TutorialScene")
             {
-                SceneManager.LoadScene("LevelTwo");
+                SceneManager.LoadScene("LevelOne");
             }
             else if (SceneManager.GetActiveScene().name == "LevelOne")
             {

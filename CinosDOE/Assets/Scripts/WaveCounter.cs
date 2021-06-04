@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class WaveCounter : MonoBehaviour
 {
     public Text waveNumber;
@@ -19,7 +19,10 @@ public class WaveCounter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        nextLevelPad.SetActive(false);
+        if (!(SceneManager.GetActiveScene().name == "TutorialScene"))
+        {
+            nextLevelPad.SetActive(false);
+        }
         UpdateNum();
     }
 
