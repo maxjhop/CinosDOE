@@ -79,7 +79,15 @@ public class Enemy : MonoBehaviour
         if (!isFrozen)
         {
             Vector3 direction = playertrans.position - this.transform.position;
-            direction.y = 0;
+            if(this.gameObject.name == "flyingTej" || this.gameObject.name == "BiggerFlying")
+            {
+                Debug.Log("Flying");
+            }
+            else
+            {
+                direction.y = 0;
+            }
+                    
 
             this.transform.rotation = Quaternion.Slerp(this.transform.rotation,
                                         Quaternion.LookRotation(direction), 0.3f);
