@@ -12,7 +12,7 @@ public class WaveCounter : MonoBehaviour
     public GameObject shop;
     public GameObject winscreen;
     public GameObject gameplayui;
-    public int MAX_WAVES = 3;
+    public int MAX_WAVES;
     
     // next level pad info
     //public bool levelComplete = false;

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.2718694, g: 0.063125186, b: 0.063125186, a: 1}
+  m_IndirectSpecularColor: {r: 0.27186838, g: 0.063125186, b: 0.063125186, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1092,9 +1092,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a56229b7a7b3164797b3414ca8426d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MAX_ENEMIES: 2
-  MAX_WAVES: 3
-  waveIntermissionTime: 3
+  MAX_ENEMIES: 10
+  MAX_WAVES: 5
+  waveIntermissionTime: 45
   shop: {fileID: 1134749465142137139}
   enemy: {fileID: 1558451300218226891, guid: 00a99b8f371ac7e498f785a4dcf40cf6, type: 3}
   enemy2: {fileID: 124235074525769657, guid: 1f57496bbe0d1d94091cc87774dbe777, type: 3}
@@ -2183,6 +2183,10 @@ PrefabInstance:
       propertyPath: shop
       value: 
       objectReference: {fileID: 1134749465142137139}
+    - target: {fileID: 4462652738094822841, guid: 6eec36ff958dc7244af65205dc4e2468, type: 3}
+      propertyPath: MAX_WAVES
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4462652738094822841, guid: 6eec36ff958dc7244af65205dc4e2468, type: 3}
       propertyPath: showingText
       value: 0
