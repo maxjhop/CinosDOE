@@ -10,6 +10,8 @@ public class WaveCounter : MonoBehaviour
     private float elapsed = 0f;
     public bool showingText = false;
     public GameObject shop;
+    public GameObject winscreen;
+    public GameObject gameplayui;
     public int MAX_WAVES = 3;
     
     // next level pad info
@@ -36,6 +38,11 @@ public class WaveCounter : MonoBehaviour
         }
         if(!showingText && (num > MAX_WAVES))
         {
+            if ((SceneManager.GetActiveScene().name == "LevelThree"))
+            {
+                winscreen.SetActive(true);
+                gameplayui.SetActive(false);
+            }
             waveNumber.text = "LEVEL COMPLETE!\n Shop Available!";
             elapsed = Time.time + 4;
             shop.SetActive(true);
