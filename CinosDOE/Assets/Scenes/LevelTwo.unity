@@ -1699,6 +1699,7 @@ MonoBehaviour:
   shop: {fileID: 1310115659}
   enemy: {fileID: 124235074525769657, guid: 1f57496bbe0d1d94091cc87774dbe777, type: 3}
   enemy2: {fileID: 124235074525769657, guid: 1f57496bbe0d1d94091cc87774dbe777, type: 3}
+  boss: {fileID: 6441464499904350606, guid: 771aab996940bc6449f39210ff09aeb1, type: 3}
   waveString: {fileID: 807182505}
 --- !u!4 &871428873
 Transform:

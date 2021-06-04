@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemySpawn : MonoBehaviour
 {
@@ -82,7 +83,18 @@ public class EnemySpawn : MonoBehaviour
         // spawn boss
         if (waveNum == MAX_WAVES && !alreadySpawned)
         {
-            GameObject newBoss = Instantiate(boss.gameObject, new Vector3(0, 2, 0), Quaternion.identity) as GameObject;
+            if (SceneManager.GetActiveScene().name == "LevelOne")
+            {
+                GameObject newBoss = Instantiate(boss.gameObject, new Vector3(0, 2, 0), Quaternion.identity) as GameObject;
+            }
+            else if (SceneManager.GetActiveScene().name == "LevelTwo")
+            {
+                GameObject newBoss = Instantiate(boss.gameObject, new Vector3(1, 14, -14), Quaternion.identity) as GameObject;
+            }
+            else if (SceneManager.GetActiveScene().name == "LevelThree")
+            {
+                GameObject newBoss = Instantiate(boss.gameObject, new Vector3(0, 2, 0), Quaternion.identity) as GameObject;
+            }
             alreadySpawned = true;
         }
 
