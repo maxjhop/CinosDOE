@@ -18,4 +18,10 @@ public class Deathmenu : MonoBehaviour
         Debug.Log("Game Over");
         SceneManager.LoadScene("Main Menu");
     }
+
+    public void restartbutton()
+    {
+        Debug.Log("Game Over");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
 }
