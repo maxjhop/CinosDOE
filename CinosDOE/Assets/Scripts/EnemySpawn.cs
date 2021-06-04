@@ -14,15 +14,15 @@ public class EnemySpawn : MonoBehaviour
     private float addedTime = 3f;
     private int totalEnemies;
     private int waveNum = 0;
-    public int MAX_ENEMIES = 5;
-    public int MAX_WAVES = 3;  // could go up to five
+    public int MAX_ENEMIES;
+    public int MAX_WAVES;  // could go up to five
     // might want to change number of enemies per wave
     // could have predetermined constants for each wave size
 
     // wave intermission info
     private bool waveOneDone = false;
     private bool firstTimeSet = true;
-    public float waveIntermissionTime = 10f;  // set to 30-60 seconds for final
+    public float waveIntermissionTime;  // set to 30-60 seconds for final
     private float waveEndTime = 0f;
     public GameObject shop;
 

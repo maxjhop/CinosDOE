@@ -12,8 +12,7 @@ public class WaveCounter : MonoBehaviour
     public GameObject shop;
     public GameObject winscreen;
     public GameObject gameplayui;
-    public Text endText;
-    public int MAX_WAVES = 3;
+    public int MAX_WAVES;
     
     // next level pad info
     //public bool levelComplete = false;
@@ -41,14 +40,6 @@ public class WaveCounter : MonoBehaviour
         {
             if ((SceneManager.GetActiveScene().name == "LevelThree"))
             {
-                float timer = TimerScript.Instance.getTime();
-                int minutes = (int)(timer / 60);
-                int seconds = (int)(timer % 60);
-                if (seconds < 10)
-                    endText.text = "You win! Congratulations! \n Time: " + minutes.ToString() + ":0" + seconds.ToString();
-                else
-                    endText.text = "You win! Congratulations! \n Time: " + minutes.ToString() + ":" + seconds.ToString();
-
                 winscreen.SetActive(true);
                 gameplayui.SetActive(false);
             }
